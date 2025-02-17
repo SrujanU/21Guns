@@ -1,9 +1,9 @@
-# 21Guns
+## 21Guns
 
 Sprint 2:
-Jack- Level Up
-Tommy- New Upgrade Assets
+#Jack- Level Up
+#Tommy- New Upgrade Assets
 
-Sathvik- Health Bar & some pickups
+#Sathvik- Health Bar & some pickups
 
-Dharma- Audio
+#Dharma- Audio
