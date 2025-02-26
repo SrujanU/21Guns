@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://biyxvxjiw3rba"]
+
+[ext_resource type="Texture2D" uid="uid://ch2mjut2n2ba5" path="res://Textures/blue-preview.png" id="1_7l56s"]
+[ext_resource type="PackedScene" uid="uid://dktxwmv0rcs4p" path="res://Gambling/levelup_screen_main.tscn" id="1_n2fnv"]
+[ext_resource type="PackedScene" uid="uid://cc3ixicd6v14q" path="res://Player/player.tscn" id="2_eekpm"]
+[ext_resource type="PackedScene" uid="uid://drc7ige8ak3cd" path="res://Cover/cover.tscn" id="4_i6ak7"]
+[ext_resource type="PackedScene" uid="uid://ddvh1tn3dju7t" path="res://Utility/enemy_spawner.tscn" id="4_ieuer"]
+[ext_resource type="AudioStream" uid="uid://crgkamg10vg2k" path="res://Audio/Music/Beat Mekanik - Retro Arcade.mp3" id="6_aa0ud"]
+
+[node name="World" type="Node2D"]
+
+[node name="levelup_screen" parent="." instance=ExtResource("1_n2fnv")]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 2
+texture = ExtResource("1_7l56s")
+region_enabled = true
+region_rect = Rect2(-4000, -4000, 4000, 4000)
+
+[node name="Player" parent="." instance=ExtResource("2_eekpm")]
+
+[node name="Cover" parent="." instance=ExtResource("4_i6ak7")]
+position = Vector2(214, 97)
+collision_layer = 4
+collision_mask = 4
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_ieuer")]
+
+[node name="Main Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_aa0ud")
+autoplay = true

@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://d16bcc0jmk00t"]
+
+[ext_resource type="Script" path="res://Player/Attack/ice_spear.gd" id="1_6aq42"]
+[ext_resource type="Texture2D" uid="uid://c46eokr0037ib" path="res://Textures/Items/Weapons/All_Fire_Bullet_Pixel_16x16.png" id="2_palex"]
+[ext_resource type="AudioStream" uid="uid://1n8rx2khr3mx" path="res://Audio/SoundEffect/ice.wav" id="3_4e8jg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_860e7"]
+atlas = ExtResource("2_palex")
+region = Rect2(0, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqpnp"]
+atlas = ExtResource("2_palex")
+region = Rect2(16, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opt7"]
+atlas = ExtResource("2_palex")
+region = Rect2(32, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t447d"]
+atlas = ExtResource("2_palex")
+region = Rect2(48, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkckr"]
+atlas = ExtResource("2_palex")
+region = Rect2(64, 256, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7f15"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_860e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqpnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4opt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t447d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkckr")
+}],
+"loop": true,
+"name": &"shot",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imsd0"]
+size = Vector2(13.5682, 19.9563)
+
+[node name="IceSpear" type="Area2D" groups=["attack"]]
+top_level = true
+scale = Vector2(0.1, 0.1)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_6aq42")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_k7f15")
+animation = &"shot"
+autoplay = "shot"
+frame_progress = 0.146075
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.211031, 3.18705)
+rotation = -1.63691
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_imsd0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="snd_play" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4e8jg")
+volume_db = -10.0
+pitch_scale = 5.0
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
