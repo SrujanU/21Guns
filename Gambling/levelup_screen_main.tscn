@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dktxwmv0rcs4p"]
+
+[ext_resource type="Script" path="res://Player/canvas_layer.gd" id="1_7bcsw"]
+[ext_resource type="PackedScene" uid="uid://gdv07cwwddfw" path="res://Gambling/levelup_screen.tscn" id="2_qs0sh"]
+
+[node name="levelup_screen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_7bcsw")
+
+[node name="levelup_screen" parent="." instance=ExtResource("2_qs0sh")]
+offset_left = 76.0
+offset_top = 35.0
+offset_right = 116.0
+offset_bottom = 75.0
+scale = Vector2(13.0032, 7.359)
+
+[connection signal="visibility_changed" from="levelup_screen" to="." method="_on_levelup_screen_visibility_changed"]

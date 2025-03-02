@@ -1,0 +1,16 @@
+res://Menu/menu.tscn
+res://Player/progress_bar.gd
+res://World/world.tscn
+res://Player/player.tscn
+res://Gambling/levelup_screen_main.tscn
+res://Gambling/levelup_screen.tscn
+res://Player/Attack/ice_spear.tscn
+res://Enemy/enemy.tscn
+res://Gambling/bet_button.tscn
+res://Player/canvas_layer.gd
+res://Gambling/bet_button.gd
+res://Global.gd
+res://Player/player.gd
+res://Player/Attack/ice_spear.gd
+res://Enemy/enemy.gd
+res://Utility/hurt_box.gd

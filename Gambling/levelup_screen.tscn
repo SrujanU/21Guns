@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://gdv07cwwddfw"]
+
+[ext_resource type="PackedScene" uid="uid://drrgi66bqcp5p" path="res://Gambling/bet_button.tscn" id="2_erjb7"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="2_qbo7x"]
+[ext_resource type="Script" path="res://Gambling/label_2.gd" id="3_wxrae"]
+[ext_resource type="Script" path="res://Gambling/keep_coins.gd" id="4_3sv2e"]
+
+[node name="levelup_screen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 41.0
+scale = Vector2(16.0232, 9.01822)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.253843, 0.253843, 0.253843, 1)
+layout_mode = 0
+offset_left = 1.43542
+offset_top = 1.77419
+offset_right = 41.4354
+offset_bottom = 41.7742
+scale = Vector2(0.907665, 0.890357)
+
+[node name="bet_button2" parent="." instance=ExtResource("2_erjb7")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.61975
+offset_top = 24.7277
+offset_right = 156.62
+offset_bottom = 45.7277
+scale = Vector2(0.200491, 0.327384)
+
+[node name="bet_button" parent="." instance=ExtResource("2_erjb7")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.24385
+offset_top = 17.631
+offset_right = 156.244
+offset_bottom = 38.631
+scale = Vector2(0.2, 0.327)
+
+[node name="bet_button3" parent="." instance=ExtResource("2_erjb7")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.99421
+offset_top = 10.5342
+offset_right = 157.994
+offset_bottom = 31.5342
+scale = Vector2(0.2, 0.327)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 6.61541
+offset_top = 3.3266
+offset_right = 60.6154
+offset_bottom = 26.3266
+scale = Vector2(0.270048, 0.396978)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+text = "Level up!"
+
+[node name="CoinReward" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 22.9667
+offset_top = 4.21369
+offset_right = 62.9667
+offset_bottom = 27.2137
+scale = Vector2(0.152726, 0.208874)
+theme_override_colors/font_color = Color(0.80453, 0.805354, 0, 1)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+script = ExtResource("3_wxrae")
+
+[node name="KeepCoins" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.7286
+offset_top = 32.4898
+offset_right = 22.7286
+offset_bottom = 40.4898
+scale = Vector2(0.2241, 0.141739)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+text = "Keep
+Coins"
+script = ExtResource("4_3sv2e")
+
+[connection signal="mouse_entered" from="KeepCoins" to="KeepCoins" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="KeepCoins" to="KeepCoins" method="_on_mouse_exited"]
