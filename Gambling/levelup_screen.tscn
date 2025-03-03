@@ -35,16 +35,7 @@ layout_mode = 2
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="bet_button2" parent="." instance=ExtResource("2_erjb7")]
-texture_filter = 1
-layout_mode = 0
-offset_left = 29.3948
-offset_top = 14.7479
-offset_right = 55.3948
-offset_bottom = 35.7479
-scale = Vector2(0.200491, 0.327384)
-
-[node name="bet_button" parent="." instance=ExtResource("2_erjb7")]
+[node name="bet_button1" parent="." groups=["bet_buttons"] instance=ExtResource("2_erjb7")]
 texture_filter = 1
 layout_mode = 0
 offset_left = 29.2076
@@ -52,8 +43,19 @@ offset_top = 6.76409
 offset_right = 55.2076
 offset_bottom = 27.7641
 scale = Vector2(0.2, 0.327)
+level_path = "res://Gambling/Blackjack/blackjack.tscn"
 
-[node name="bet_button3" parent="." instance=ExtResource("2_erjb7")]
+[node name="bet_button2" parent="." groups=["bet_buttons"] instance=ExtResource("2_erjb7")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.3948
+offset_top = 14.7479
+offset_right = 55.3948
+offset_bottom = 35.7479
+scale = Vector2(0.200491, 0.327384)
+level_path = "res://Gambling/Blackjack/blackjack.tscn"
+
+[node name="bet_button3" parent="." groups=["bet_buttons"] instance=ExtResource("2_erjb7")]
 texture_filter = 1
 layout_mode = 0
 offset_left = 29.1452
@@ -61,6 +63,7 @@ offset_top = 22.51
 offset_right = 55.1452
 offset_bottom = 43.51
 scale = Vector2(0.2, 0.327)
+level_path = "res://Gambling/Blackjack/blackjack.tscn"
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
@@ -85,36 +88,36 @@ theme_override_colors/font_color = Color(0.80453, 0.805354, 0, 1)
 theme_override_fonts/font = ExtResource("2_qbo7x")
 script = ExtResource("3_wxrae")
 
-[node name="Bet1" type="Label" parent="."]
+[node name="Bet1" type="Label" parent="." groups=["bet_labels"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 1.49783
 offset_top = 6.32054
 offset_right = 41.4978
 offset_bottom = 29.3205
-scale = Vector2(0.378997, 0.337201)
+scale = Vector2(0.25, 0.337)
 theme_override_fonts/font = ExtResource("2_qbo7x")
 text = "Bet 1..."
 
-[node name="Bet2" type="Label" parent="."]
+[node name="Bet2" type="Label" parent="." groups=["bet_labels"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 1.37301
 offset_top = 13.8608
 offset_right = 49.373
 offset_bottom = 36.8608
-scale = Vector2(0.378912, 0.372471)
+scale = Vector2(0.25, 0.372)
 theme_override_fonts/font = ExtResource("2_qbo7x")
 text = "Bet 2..."
 
-[node name="Bet3" type="Label" parent="."]
+[node name="Bet3" type="Label" parent="." groups=["bet_labels"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 1.3106
 offset_top = 22.9535
 offset_right = 49.3106
 offset_bottom = 45.9535
-scale = Vector2(0.381021, 0.382252)
+scale = Vector2(0.25, 0.382)
 theme_override_fonts/font = ExtResource("2_qbo7x")
 text = "Bet 3..."
 

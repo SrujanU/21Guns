@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://biyxvxjiw3rba"]
+[gd_scene load_steps=8 format=3 uid="uid://biyxvxjiw3rba"]
 
 [ext_resource type="Texture2D" uid="uid://ch2mjut2n2ba5" path="res://Textures/blue-preview.png" id="1_7l56s"]
 [ext_resource type="PackedScene" uid="uid://dktxwmv0rcs4p" path="res://Gambling/levelup_screen_main.tscn" id="1_n2fnv"]
+[ext_resource type="Script" path="res://World/world.gd" id="1_n4u5r"]
 [ext_resource type="PackedScene" uid="uid://cc3ixicd6v14q" path="res://Player/player.tscn" id="2_eekpm"]
 [ext_resource type="PackedScene" uid="uid://drc7ige8ak3cd" path="res://Cover/cover.tscn" id="4_i6ak7"]
 [ext_resource type="PackedScene" uid="uid://ddvh1tn3dju7t" path="res://Utility/enemy_spawner.tscn" id="4_ieuer"]
 [ext_resource type="AudioStream" uid="uid://crgkamg10vg2k" path="res://Audio/Music/Beat Mekanik - Retro Arcade.mp3" id="6_aa0ud"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_n4u5r")
 
 [node name="levelup_screen" parent="." instance=ExtResource("1_n2fnv")]
 

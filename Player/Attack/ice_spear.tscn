@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/Attack/ice_spear.gd" id="1_6aq42"]
 [ext_resource type="Texture2D" uid="uid://c46eokr0037ib" path="res://Textures/Items/Weapons/All_Fire_Bullet_Pixel_16x16.png" id="2_palex"]
-[ext_resource type="AudioStream" uid="uid://1n8rx2khr3mx" path="res://Audio/SoundEffect/ice.wav" id="3_4e8jg"]
+[ext_resource type="AudioStream" uid="uid://bwxet5dt1qvro" path="res://Audio/SoundEffect/gun-shot-1-7069.mp3" id="3_dq27q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_860e7"]
 atlas = ExtResource("2_palex")
@@ -76,7 +76,7 @@ one_shot = true
 autostart = true
 
 [node name="snd_play" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_4e8jg")
+stream = ExtResource("3_dq27q")
 volume_db = -10.0
 pitch_scale = 5.0
 autoplay = true

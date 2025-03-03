@@ -1,7 +1,7 @@
 extends Button
 
 @export_file var level_path
-
+var bet_value
 var original_size := Vector2(0.2, 0.327)
 var grow_size = Vector2(0.25, 0.377)
 
@@ -21,16 +21,3 @@ func grow_btn(end_size: Vector2, duration: float):
 	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, 'scale', end_size, duration)
 	
-
-
-
-
-func _on_pressed() -> void:
-	if level_path == null:
-		return
-	var packed_scene = load(level_path)
-	
-	get_tree().change_scene_to_packed(packed_scene)
-	print("blackjack time")
-	print(level_path)
-	print(packed_scene)

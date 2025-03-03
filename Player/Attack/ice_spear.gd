@@ -2,7 +2,7 @@ extends Area2D
 
 var level = 1
 var hp = 1
-var speed = 100
+var speed = Global.bullet_speed
 var damage = 5
 var knock_amount = 100
 var attack_size = 1.0

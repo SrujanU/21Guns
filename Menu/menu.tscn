@@ -43,7 +43,7 @@ text = "Play"
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2ikiq")
-text = "Options"
+text = "Tutorial"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -70,6 +70,36 @@ offset_bottom = 353.0
 mouse_filter = 2
 texture = ExtResource("3_irbhr")
 expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.005, 8.87836)
+color = Color(0.221302, 0.221302, 0.221302, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 22.0
+offset_top = 15.0
+offset_right = 661.0
+offset_bottom = 90.0
+scale = Vector2(1.04413, 2.97104)
+theme_override_fonts/font = ExtResource("2_2ikiq")
+text = "How tp play:
+     Use the WASD keys to move.
+     Your gun autoshoots, so kill as many enemies as possible to earn xp and upgrades.
+     When you level up, you will be rewarded coins. You can gamble these coins for upgrades
+by playing blackjack. Press the bet button to \"BET\", or the \"KEEP COINS\" button to keep them.
+"
+
+[node name="back" type="Button" parent="CanvasLayer"]
+offset_left = 272.0
+offset_top = 279.0
+offset_right = 280.0
+offset_bottom = 287.0
+scale = Vector2(1.90623, 1.99281)
+text = "BACK"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
