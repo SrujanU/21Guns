@@ -1,9 +1,9 @@
-/Users/jacksaigusa/Downloads/21Guns-sprint2/Exports/mac
-/Users/jacksaigusa/Downloads/21Guns-sprint2/Exports/mac/team12_sprint3_21guns.app/Contents/MacOS
-/Users/jacksaigusa/Downloads/21Guns-sprint2/Exports/windows
-/Users/jacksaigusa/Downloads/21Guns-sprint2/Exports/web
-res://Gambling/sprites/cards/dark
+/Users/jacksaigusa/Downloads/21Guns-sprint2/Exports
 res://Gambling/sprites
+res://Textures/Items/Scenes
+res://Textures/Items/Upgrades
+res://
+res://Gambling/sprites/cards/dark
 res://Gambling/Blackjack
 res://Textures/Player/acestarlight_spritesheet1
 res://Textures/GUI
@@ -17,7 +17,3 @@ res://Textures
 res://Textures/Items/Weapons
 res://Textures/Player
 res://Player
-res://
-res://Player/Attack
-res://Utility
-res://Cover

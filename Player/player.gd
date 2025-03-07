@@ -53,7 +53,7 @@ func movement():
 	else:
 		sprite.play("idle")
 	
-	velocity = mov.normalized()*movement_speed
+	velocity = mov.normalized()*Global.movement_speed
 	move_and_slide()
 
 func attack():

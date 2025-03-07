@@ -3,7 +3,7 @@ extends Area2D
 var level = 1
 var hp = 1
 var speed = Global.bullet_speed
-var damage = 5
+var damage = Global.attack_power
 var knock_amount = 100
 var attack_size = 1.0
 
@@ -20,7 +20,7 @@ func _ready():
 		1:
 			hp = 1
 			speed = 100
-			damage = 5
+			damage = damage
 			knock_amount = 100
 			attack_size = 1.0
 	var tween = create_tween()
@@ -29,7 +29,7 @@ func _ready():
 			
 func _physics_process(delta):
 	sprite_2d.play("shot")
-	position += angle*speed*delta
+	position += angle*Global.bullet_speed*delta
 		
 func enemy_hit(charge = 1):
 	hp -= charge

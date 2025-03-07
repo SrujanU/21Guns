@@ -11,16 +11,25 @@ var coins = 0
 var upgrades = []
 var count := 0
 var broker_count := 0
-var movement_speed = 65.0
-var bullet_speed = 100
-var icespear_attackspeed = 3
+var movement_speed = 65.0 + 10*upgrades.count(1)
+var bullet_speed = 100 + 20*upgrades.count(3)
+var icespear_attackspeed = 3 - 0.5*upgrades.count(2)
 var ammo = 1
+#variable to store the most recent sum of coins awarded to the player. It's used to add reward appropriately given blackjack result after upgrade or if coins just kept.
+var last_coin_reward = 0
+#keeps track of most recently selected upgrade to dislay winnings if hand won.
+var selected_upgrade = ""
+var attack_power = 5 + 2*upgrades.count(0)
 func _process(delta):
 	movement_speed = 65.0 + 10*upgrades.count(1)
+	#print("movement speed: " + str(movement_speed))
 	bullet_speed = 100 + 100*upgrades.count(3)
+	#print("bullet speed: " +str(bullet_speed))
 	icespear_attackspeed = 3 - 0.5*upgrades.count(2)
+	#print("attack speed: " + str(icespear_attackspeed))
+	attack_power = 5 + 5*upgrades.count(0)
+	#print("attack power: " + str(attack_power))
 	
-	ammo = 1 + upgrades.count(0)
 	#print(upgrades)
 
 func reset_blackjack():

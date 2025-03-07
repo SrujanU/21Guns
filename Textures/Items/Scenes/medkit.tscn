@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://beykxkasd7uop"]
+
+[ext_resource type="Texture2D" uid="uid://68rf6xlo68a0" path="res://Textures/Items/Upgrades/med_kit.png" id="1_q3nm3"]
+[ext_resource type="Script" path="res://Textures/Items/Scenes/medkit.gd" id="1_vkqqn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xh4rn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q3nm3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dxa3"]
+radius = 78.0064
+
+[node name="Medkit" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_vkqqn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xh4rn")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1dxa3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

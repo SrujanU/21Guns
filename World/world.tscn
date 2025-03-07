@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biyxvxjiw3rba"]
+[gd_scene load_steps=12 format=3 uid="uid://biyxvxjiw3rba"]
 
 [ext_resource type="Texture2D" uid="uid://ch2mjut2n2ba5" path="res://Textures/blue-preview.png" id="1_7l56s"]
 [ext_resource type="PackedScene" uid="uid://dktxwmv0rcs4p" path="res://Gambling/levelup_screen_main.tscn" id="1_n2fnv"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://drc7ige8ak3cd" path="res://Cover/cover.tscn" id="4_i6ak7"]
 [ext_resource type="PackedScene" uid="uid://ddvh1tn3dju7t" path="res://Utility/enemy_spawner.tscn" id="4_ieuer"]
 [ext_resource type="AudioStream" uid="uid://crgkamg10vg2k" path="res://Audio/Music/Beat Mekanik - Retro Arcade.mp3" id="6_aa0ud"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="8_83348"]
+[ext_resource type="Script" path="res://World/tutorial.gd" id="9_ipajj"]
+[ext_resource type="PackedScene" uid="uid://beykxkasd7uop" path="res://Textures/Items/Scenes/medkit.tscn" id="10_h2bh6"]
+[ext_resource type="PackedScene" uid="uid://dj4s0bq4gexud" path="res://Textures/Items/Scenes/coin_pickup.tscn" id="11_dk84w"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n4u5r")
@@ -32,3 +36,29 @@ collision_mask = 4
 [node name="Main Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_aa0ud")
 autoplay = true
+
+[node name="Tutorial" type="Window" parent="."]
+position = Vector2i(10, 36)
+size = Vector2i(110, 110)
+theme_override_fonts/title_font = ExtResource("8_83348")
+script = ExtResource("9_ipajj")
+
+[node name="Label" type="Label" parent="Tutorial"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_83348")
+
+[node name="Medkit" parent="." instance=ExtResource("10_h2bh6")]
+position = Vector2(-186, -85)
+
+[node name="Coin_pickup" parent="." instance=ExtResource("11_dk84w")]
+position = Vector2(75, -145)
+
+[node name="Coin_pickup2" parent="." instance=ExtResource("11_dk84w")]
+position = Vector2(-112, -164)
+
+[node name="Coin_pickup3" parent="." instance=ExtResource("11_dk84w")]
+position = Vector2(295, -47)
+
+[connection signal="close_requested" from="Tutorial" to="Tutorial" method="_on_close_requested"]

@@ -13,7 +13,7 @@ const BASE_Z = 1000
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 const ENEMY_EXP_GAIN = 500
 var dying:bool = false
-
+var coin_path = "res://Textures/Items/Scenes/coin_pickup.tscn"
 
 
 func _ready():
@@ -62,7 +62,11 @@ func die():
 	hit_box.get_node("CollisionShape2D").set_deferred("disabled", true)
 	print("should not hit")
 	
-	
+	#spawn a coin in enemy's place when enemy dies
+	var coin_scene = load(coin_path)
+	var coin = coin_scene.instantiate()
+	coin.position = self.position
+	get_parent().get_parent().add_child(coin)
 	
 	sprite_2d.play("die ")
 	

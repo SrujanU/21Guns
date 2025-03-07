@@ -13,4 +13,7 @@ func _process(delta: float) -> void:
 	
 
 func update_coin_reward():
-	text = "+ " + str(Global.exp_thresholds[Global.player_level]/10) + " Coins!"
+	Global.last_coin_reward = Global.exp_thresholds[Global.player_level]/10
+	#print(Global.last_coin_reward)
+	
+	text = "+ " + str(Global.last_coin_reward) + " Coins!"

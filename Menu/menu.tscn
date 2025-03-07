@@ -80,6 +80,7 @@ scale = Vector2(16.005, 8.87836)
 color = Color(0.221302, 0.221302, 0.221302, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
 offset_left = 22.0
 offset_top = 15.0
 offset_right = 661.0
@@ -90,7 +91,7 @@ text = "How tp play:
      Use the WASD keys to move.
      Your gun autoshoots, so kill as many enemies as possible to earn xp and upgrades.
      When you level up, you will be rewarded coins. You can gamble these coins for upgrades
-by playing blackjack. Press the bet button to \"BET\", or the \"KEEP COINS\" button to keep them.
+by playing blackjack. Press the \"BET\" button to bet, or the \"KEEP COINS\" button to keep them.
 "
 
 [node name="back" type="Button" parent="CanvasLayer"]

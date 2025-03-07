@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cv62l1tvbe77b" path="res://Gambling/sprites/acestarlight_blackjack_cutscene.png" id="10_akc85"]
 
 [node name="Blackjack" type="Node2D"]
+process_mode = 3
 texture_filter = 1
 script = ExtResource("1_sfr8p")
 
@@ -64,21 +65,31 @@ theme_override_fonts/font = ExtResource("2_aocgo")
 [node name="Window" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
-offset_left = 134.0
-offset_top = 62.0
-offset_right = 174.0
-offset_bottom = 102.0
-scale = Vector2(9.93405, 6.7666)
-color = Color(0, 0.138168, 0.29253, 1)
+offset_left = 73.0
+offset_top = 10.0
+offset_right = 113.0
+offset_bottom = 50.0
+scale = Vector2(12.6268, 8.24035)
+color = Color(0.215902, 0.215902, 0.215902, 1)
 
 [node name="Result" type="Label" parent="Window"]
-offset_left = 180.0
-offset_top = 76.0
-offset_right = 229.0
-offset_bottom = 99.0
+offset_left = 103.0
+offset_top = 44.0
+offset_right = 152.0
+offset_bottom = 67.0
 scale = Vector2(4.56312, 3.16428)
 theme_override_fonts/font = ExtResource("2_aocgo")
 text = "Result"
+
+[node name="Backtogame" type="Button" parent="Window"]
+offset_left = 283.0
+offset_top = 273.0
+offset_right = 333.0
+offset_bottom = 307.0
+scale = Vector2(1.83222, 1.5523)
+theme_override_fonts/font = ExtResource("2_aocgo")
+text = "Back
+to Game"
 
 [node name="SoundCard" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_m0it0")

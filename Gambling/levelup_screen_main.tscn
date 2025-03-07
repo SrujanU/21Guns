@@ -6,6 +6,7 @@
 
 [node name="levelup_screen" type="CanvasLayer"]
 process_mode = 3
+visible = false
 script = ExtResource("1_7bcsw")
 
 [node name="levelup_screen" parent="." instance=ExtResource("2_qs0sh")]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://gdv07cwwddfw"]
+[gd_scene load_steps=8 format=3 uid="uid://gdv07cwwddfw"]
 
 [ext_resource type="PackedScene" uid="uid://drrgi66bqcp5p" path="res://Gambling/bet_button.tscn" id="2_erjb7"]
 [ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="2_qbo7x"]
 [ext_resource type="Script" path="res://Gambling/label_2.gd" id="3_wxrae"]
 [ext_resource type="Script" path="res://Gambling/keep_coins.gd" id="4_3sv2e"]
+[ext_resource type="Script" path="res://Gambling/bet_1.gd" id="4_cwm8i"]
+[ext_resource type="Script" path="res://Gambling/bet_2.gd" id="5_ucvja"]
+[ext_resource type="Script" path="res://Gambling/bet_3.gd" id="6_fgmks"]
 
 [node name="levelup_screen" type="Control"]
 process_mode = 3
@@ -98,6 +101,7 @@ offset_bottom = 29.3205
 scale = Vector2(0.25, 0.337)
 theme_override_fonts/font = ExtResource("2_qbo7x")
 text = "Bet 1..."
+script = ExtResource("4_cwm8i")
 
 [node name="Bet2" type="Label" parent="." groups=["bet_labels"]]
 texture_filter = 1
@@ -109,6 +113,7 @@ offset_bottom = 36.8608
 scale = Vector2(0.25, 0.372)
 theme_override_fonts/font = ExtResource("2_qbo7x")
 text = "Bet 2..."
+script = ExtResource("5_ucvja")
 
 [node name="Bet3" type="Label" parent="." groups=["bet_labels"]]
 texture_filter = 1
@@ -120,6 +125,7 @@ offset_bottom = 45.9535
 scale = Vector2(0.25, 0.382)
 theme_override_fonts/font = ExtResource("2_qbo7x")
 text = "Bet 3..."
+script = ExtResource("6_fgmks")
 
 [node name="KeepCoins" type="Button" parent="."]
 texture_filter = 1

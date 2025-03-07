@@ -1,6 +1,6 @@
 res://Menu/menu.tscn
-res://Gambling/Blackjack/blackjack.gd
 res://Player/progress_bar.gd
+res://Gambling/Blackjack/blackjack.gd
 res://World/world.tscn
 res://Player/player.tscn
 res://Gambling/levelup_screen_main.tscn
@@ -9,4 +9,7 @@ res://Player/Attack/ice_spear.tscn
 res://Enemy/enemy.tscn
 res://Gambling/Blackjack/blackjack.tscn
 res://Gambling/Blackjack/card.tscn
-res://menu.gd
+res://main.tscn
+res://Textures/Items/Scenes/medkit.tscn
+res://Textures/Items/Scenes/coin_pickup.tscn
+res://main.gd
