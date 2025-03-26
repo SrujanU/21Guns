@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://gdv07cwwddfw"]
+
+[ext_resource type="PackedScene" uid="uid://drrgi66bqcp5p" path="res://Gambling/bet_button.tscn" id="2_erjb7"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="2_qbo7x"]
+[ext_resource type="Script" path="res://Gambling/label_2.gd" id="3_wxrae"]
+[ext_resource type="Script" path="res://Gambling/keep_coins.gd" id="4_3sv2e"]
+[ext_resource type="Script" path="res://Gambling/bet_1.gd" id="4_cwm8i"]
+[ext_resource type="Script" path="res://Gambling/bet_2.gd" id="5_ucvja"]
+[ext_resource type="Script" path="res://Gambling/bet_3.gd" id="6_fgmks"]
+
+[node name="levelup_screen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 41.0
+scale = Vector2(16.0232, 9.01822)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.253843, 0.253843, 0.253843, 1)
+layout_mode = 0
+offset_left = 1.43542
+offset_top = 1.77419
+offset_right = 41.4354
+offset_bottom = 41.7742
+scale = Vector2(0.907665, 0.890357)
+color = Color(0.620716, 0.36868, 0.959254, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="bet_button1" parent="." groups=["bet_buttons"] instance=ExtResource("2_erjb7")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.2076
+offset_top = 6.76409
+offset_right = 55.2076
+offset_bottom = 27.7641
+scale = Vector2(0.2, 0.327)
+theme_override_colors/font_hover_color = Color(1, 0.74902, 0, 1)
+level_path = "res://Gambling/Blackjack/blackjack.tscn"
+
+[node name="bet_button2" parent="." groups=["bet_buttons"] instance=ExtResource("2_erjb7")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.3948
+offset_top = 14.7479
+offset_right = 55.3948
+offset_bottom = 35.7479
+scale = Vector2(0.200491, 0.327384)
+theme_override_colors/font_hover_color = Color(1, 0.74902, 0, 1)
+level_path = "res://Gambling/Blackjack/blackjack.tscn"
+
+[node name="bet_button3" parent="." groups=["bet_buttons"] instance=ExtResource("2_erjb7")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.1452
+offset_top = 22.51
+offset_right = 55.1452
+offset_bottom = 43.51
+scale = Vector2(0.2, 0.327)
+theme_override_colors/font_hover_color = Color(1, 0.74902, 0, 1)
+level_path = "res://Gambling/Blackjack/blackjack.tscn"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 7.86359
+offset_top = 0.887093
+offset_right = 61.8636
+offset_bottom = 23.8871
+scale = Vector2(0.270048, 0.396978)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+text = "Level up!"
+
+[node name="CoinReward" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 22.9667
+offset_top = 1.88507
+offset_right = 62.9667
+offset_bottom = 24.8851
+scale = Vector2(0.152726, 0.208874)
+theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+script = ExtResource("3_wxrae")
+
+[node name="Bet1" type="Label" parent="." groups=["bet_labels"]]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.49783
+offset_top = 6.32054
+offset_right = 41.4978
+offset_bottom = 29.3205
+scale = Vector2(0.25, 0.337)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+text = "Bet 1..."
+script = ExtResource("4_cwm8i")
+
+[node name="Bet2" type="Label" parent="." groups=["bet_labels"]]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.37301
+offset_top = 13.8608
+offset_right = 49.373
+offset_bottom = 36.8608
+scale = Vector2(0.25, 0.372)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+text = "Bet 2..."
+script = ExtResource("5_ucvja")
+
+[node name="Bet3" type="Label" parent="." groups=["bet_labels"]]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.3106
+offset_top = 22.9535
+offset_right = 49.3106
+offset_bottom = 45.9535
+scale = Vector2(0.25, 0.382)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+text = "Bet 3..."
+script = ExtResource("6_fgmks")
+
+[node name="KeepCoins" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.7286
+offset_top = 32.4898
+offset_right = 22.7286
+offset_bottom = 40.4898
+scale = Vector2(0.2241, 0.141739)
+theme_override_fonts/font = ExtResource("2_qbo7x")
+text = "Keep
+Coins"
+script = ExtResource("4_3sv2e")
+
+[connection signal="mouse_entered" from="KeepCoins" to="KeepCoins" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="KeepCoins" to="KeepCoins" method="_on_mouse_exited"]

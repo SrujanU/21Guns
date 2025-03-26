@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://drrgi66bqcp5p"]
+
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="1_02vcc"]
+[ext_resource type="Script" path="res://Gambling/bet_button.gd" id="1_gd4j6"]
+
+[node name="bet_button" type="Button"]
+offset_left = 34.0
+offset_top = 23.0
+offset_right = 60.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("1_02vcc")
+text = "BET"
+script = ExtResource("1_gd4j6")
+level_path = "res://Gambling/Blackjack/blackjack_placeholder.tscn"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

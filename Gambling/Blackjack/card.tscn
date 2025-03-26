@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://br6grrbh2hegw"]
+
+[ext_resource type="Script" path="res://Gambling/Blackjack/card.gd" id="1_sg0kv"]
+[ext_resource type="Texture2D" uid="uid://my1t6uyqhm6c" path="res://Gambling/sprites/cards/dark/BACK.png" id="2_qajak"]
+
+[node name="Card" type="Node2D" groups=["cards"]]
+script = ExtResource("1_sg0kv")
+
+[node name="Texture" type="TextureButton" parent="."]
+scale = Vector2(0.33, 0.33)
+texture_disabled = ExtResource("2_qajak")

@@ -1,0 +1,133 @@
+[gd_scene load_steps=12 format=3 uid="uid://digaq6hcu6vsv"]
+
+[ext_resource type="Texture2D" uid="uid://cwnpo1qoh72st" path="res://Gambling/sprites/table.jpg" id="1_fb84l"]
+[ext_resource type="Script" path="res://Gambling/Blackjack/blackjack.gd" id="1_sfr8p"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="2_aocgo"]
+[ext_resource type="Script" path="res://Gambling/Blackjack/stand.gd" id="2_mbwa3"]
+[ext_resource type="Script" path="res://Gambling/Blackjack/hit.gd" id="3_qm0gi"]
+[ext_resource type="AudioStream" uid="uid://bv7pw5lrjx80e" path="res://Audio/Blackjack/card-sounds-35956.mp3" id="6_m0it0"]
+[ext_resource type="AudioStream" uid="uid://c0m8cuu8ggy3p" path="res://Audio/SoundEffect/game-over-arcade-6435.mp3" id="7_rljgc"]
+[ext_resource type="AudioStream" uid="uid://c7exqsvjyrsxt" path="res://Audio/SoundEffect/game_won.wav" id="8_crln5"]
+[ext_resource type="AudioStream" uid="uid://cbgmeqpht5fac" path="res://Audio/Blackjack/Blackjack_music.mp3" id="9_po2we"]
+[ext_resource type="Script" path="res://Gambling/Blackjack/canvas_layer.gd" id="10_2j5ct"]
+[ext_resource type="Texture2D" uid="uid://cv62l1tvbe77b" path="res://Gambling/sprites/acestarlight_blackjack_cutscene.png" id="10_akc85"]
+
+[node name="Blackjack" type="Node2D"]
+process_mode = 3
+texture_filter = 1
+script = ExtResource("1_sfr8p")
+
+[node name="Stand" type="Button" parent="."]
+texture_filter = 1
+offset_left = 525.0
+offset_top = 284.0
+offset_right = 563.0
+offset_bottom = 305.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("2_aocgo")
+text = "STAND"
+script = ExtResource("2_mbwa3")
+
+[node name="Hit" type="Button" parent="."]
+texture_filter = 1
+offset_left = 431.0
+offset_top = 284.0
+offset_right = 457.0
+offset_bottom = 305.0
+scale = Vector2(3, 2)
+theme_override_fonts/font = ExtResource("2_aocgo")
+text = "HIT"
+script = ExtResource("3_qm0gi")
+
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(330, 164)
+texture = ExtResource("1_fb84l")
+
+[node name="PlayerCount" type="Label" parent="."]
+texture_filter = 1
+offset_left = 6.0
+offset_top = 270.0
+offset_right = 110.0
+offset_bottom = 293.0
+scale = Vector2(1.77443, 2.93116)
+theme_override_fonts/font = ExtResource("2_aocgo")
+
+[node name="BrokerCount" type="Label" parent="."]
+texture_filter = 1
+offset_left = 210.0
+offset_top = -3.0
+offset_right = 250.0
+offset_bottom = 20.0
+scale = Vector2(2.80247, 1.95092)
+theme_override_fonts/font = ExtResource("2_aocgo")
+
+[node name="Window" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_left = 73.0
+offset_top = 10.0
+offset_right = 113.0
+offset_bottom = 50.0
+scale = Vector2(12.6268, 8.24035)
+color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[node name="Result" type="Label" parent="Window"]
+offset_left = 103.0
+offset_top = 44.0
+offset_right = 152.0
+offset_bottom = 67.0
+scale = Vector2(4.56312, 3.16428)
+theme_override_fonts/font = ExtResource("2_aocgo")
+text = "Result"
+
+[node name="Backtogame" type="Button" parent="Window"]
+offset_left = 283.0
+offset_top = 273.0
+offset_right = 333.0
+offset_bottom = 307.0
+scale = Vector2(1.83222, 1.5523)
+theme_override_fonts/font = ExtResource("2_aocgo")
+text = "Back
+to Game"
+
+[node name="SoundCard" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_m0it0")
+bus = &"SFX"
+
+[node name="SoundLose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_rljgc")
+bus = &"SFX"
+
+[node name="SoundWin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_crln5")
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_po2we")
+
+[node name="Cutscene" type="CanvasLayer" parent="."]
+script = ExtResource("10_2j5ct")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cutscene"]
+texture_filter = 1
+position = Vector2(320, 182)
+scale = Vector2(0.933096, 0.543643)
+texture = ExtResource("10_akc85")
+
+[node name="Label" type="Label" parent="Cutscene"]
+texture_filter = 1
+offset_left = 108.0
+offset_top = 320.0
+offset_right = 288.0
+offset_bottom = 343.0
+scale = Vector2(2.46928, 2.10075)
+theme_override_fonts/font = ExtResource("2_aocgo")
+text = "\"Just one more hand... again.\""
+
+[connection signal="mouse_entered" from="Stand" to="Stand" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Stand" to="Stand" method="_on_mouse_exited"]
+[connection signal="pressed" from="Stand" to="." method="_on_stand_pressed"]
+[connection signal="mouse_entered" from="Hit" to="Hit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Hit" to="Hit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Hit" to="." method="_on_hit_pressed"]

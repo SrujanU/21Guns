@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://biyxvxjiw3rba"]
+
+[ext_resource type="Texture2D" uid="uid://ch2mjut2n2ba5" path="res://Textures/blue-preview.png" id="1_7l56s"]
+[ext_resource type="PackedScene" uid="uid://dktxwmv0rcs4p" path="res://Gambling/levelup_screen_main.tscn" id="1_n2fnv"]
+[ext_resource type="Script" path="res://World/world.gd" id="1_n4u5r"]
+[ext_resource type="PackedScene" uid="uid://cc3ixicd6v14q" path="res://Player/player.tscn" id="2_eekpm"]
+[ext_resource type="Texture2D" uid="uid://derg1paegwt5g" path="res://Textures/BACKGROUND.jpg" id="3_5veqv"]
+[ext_resource type="PackedScene" uid="uid://drc7ige8ak3cd" path="res://Cover/cover.tscn" id="4_i6ak7"]
+[ext_resource type="PackedScene" uid="uid://ddvh1tn3dju7t" path="res://Utility/enemy_spawner.tscn" id="4_ieuer"]
+[ext_resource type="AudioStream" uid="uid://crgkamg10vg2k" path="res://Audio/Music/Beat Mekanik - Retro Arcade.mp3" id="6_aa0ud"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="8_83348"]
+[ext_resource type="Script" path="res://World/tutorial.gd" id="9_ipajj"]
+[ext_resource type="PackedScene" uid="uid://beykxkasd7uop" path="res://Textures/Items/Scenes/medkit.tscn" id="10_h2bh6"]
+[ext_resource type="PackedScene" uid="uid://dj4s0bq4gexud" path="res://Textures/Items/Scenes/coin_pickup.tscn" id="11_dk84w"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_n4u5r")
+
+[node name="levelup_screen" parent="." instance=ExtResource("1_n2fnv")]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(12000, 8940)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3000.0
+offset_top = -2235.0
+offset_right = 9000.0
+offset_bottom = 6705.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_5veqv")
+region_rect = Rect2(0, 0, 3861, 3070)
+patch_margin_left = 1216
+patch_margin_top = 1008
+patch_margin_right = 1157
+patch_margin_bottom = 662
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 2
+texture = ExtResource("1_7l56s")
+region_enabled = true
+region_rect = Rect2(-4000, -4000, 4000, 4000)
+
+[node name="Player" parent="." node_paths=PackedStringArray("background") instance=ExtResource("2_eekpm")]
+top = -1728.0
+bottom = 1888.0
+left = -2392.0
+right = 2408.0
+background = NodePath("../NinePatchRect")
+
+[node name="Cover" parent="." instance=ExtResource("4_i6ak7")]
+position = Vector2(214, 97)
+collision_layer = 4
+collision_mask = 4
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_ieuer")]
+
+[node name="Main Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_aa0ud")
+autoplay = true
+
+[node name="Tutorial" type="Window" parent="."]
+position = Vector2i(10, 36)
+size = Vector2i(110, 110)
+theme_override_fonts/title_font = ExtResource("8_83348")
+script = ExtResource("9_ipajj")
+
+[node name="Label" type="Label" parent="Tutorial"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_83348")
+
+[node name="Medkit" parent="." instance=ExtResource("10_h2bh6")]
+position = Vector2(-186, -85)
+
+[node name="Coin_pickup" parent="." instance=ExtResource("11_dk84w")]
+position = Vector2(75, -145)
+
+[node name="Coin_pickup2" parent="." instance=ExtResource("11_dk84w")]
+position = Vector2(-112, -164)
+
+[node name="Coin_pickup3" parent="." instance=ExtResource("11_dk84w")]
+position = Vector2(295, -47)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(2408, -1728)
+
+[connection signal="close_requested" from="Tutorial" to="Tutorial" method="_on_close_requested"]
