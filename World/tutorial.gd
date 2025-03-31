@@ -4,7 +4,7 @@ var tutorial_stage = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$".".visible = false
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	get_tree().paused = true
 	$".".visible = true
 	$Label.text = "\nUse the WASD keys\nto move."
@@ -27,7 +27,7 @@ func _on_close_requested() -> void:
 		return
 	$".".visible = false
 	get_tree().paused = false
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	#second message
 	get_tree().paused = true
 	$".".visible = true

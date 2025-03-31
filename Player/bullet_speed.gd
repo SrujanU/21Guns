@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 	
 func update_bullet_speed_bar():
 	$".".value = Global.bullet_speed
-	$".".max_value = 750
+	$".".max_value = 1200

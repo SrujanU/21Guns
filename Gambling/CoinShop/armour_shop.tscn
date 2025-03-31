@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ick0kfhi2eg"]
+
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="1_2265n"]
+
+[node name="ArmourShop" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ShopBackground" type="ScrollContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.0554, 10.1017)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopBackground"]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="ShopBackground/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "ArmourSet1
+"
+
+[node name="ItemDescription" type="Label" parent="ShopBackground/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Description for armourset1
++20 HP
+-10 Movement Speed
+"

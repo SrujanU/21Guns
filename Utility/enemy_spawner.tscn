@@ -17,6 +17,7 @@ script = ExtResource("1_7vfmv")
 spawns = Array[ExtResource("2_7yg4t")]([SubResource("Resource_51pxo")])
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.407
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

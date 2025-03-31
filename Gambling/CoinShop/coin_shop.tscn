@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://75dynuvor8wq"]
+
+[ext_resource type="Script" path="res://Gambling/CoinShop/coin_shop.gd" id="1_86yh0"]
+[ext_resource type="Texture2D" uid="uid://b6kxd54d3dwas" path="res://Gambling/sprites/coin_shop_background.png" id="1_x0gti"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="2_3ps0v"]
+[ext_resource type="Script" path="res://Gambling/CoinShop/armour_hp.gd" id="3_0jnkd"]
+[ext_resource type="Script" path="res://Gambling/CoinShop/guns_ammo.gd" id="4_fjxs3"]
+[ext_resource type="Script" path="res://Gambling/CoinShop/upgrades.gd" id="5_8lhdl"]
+
+[node name="CoinShop" type="Node2D"]
+script = ExtResource("1_86yh0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(321, 164)
+scale = Vector2(-0.630114, 0.38263)
+texture = ExtResource("1_x0gti")
+
+[node name="ShopMenuBackground" type="ColorRect" parent="CanvasLayer"]
+offset_left = 54.0
+offset_top = 22.0
+offset_right = 94.0
+offset_bottom = 62.0
+scale = Vector2(13.0488, 7.68823)
+color = Color(0.0156863, 0.0156863, 0.0196078, 0.890196)
+
+[node name="Shop" type="Label" parent="CanvasLayer/ShopMenuBackground"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.3962
+offset_top = -0.260138
+offset_right = 57.3962
+offset_bottom = 22.7399
+scale = Vector2(0.253417, 0.485534)
+theme_override_fonts/font = ExtResource("2_3ps0v")
+text = "SHOP"
+
+[node name="ArmourHP" type="Button" parent="CanvasLayer/ShopMenuBackground"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.76261
+offset_top = 6.89365
+offset_right = 63.7626
+offset_bottom = 29.8937
+scale = Vector2(0.156272, 0.168825)
+theme_override_fonts/font = ExtResource("2_3ps0v")
+text = "Armour/HP"
+script = ExtResource("3_0jnkd")
+
+[node name="GunsAmmo" type="Button" parent="CanvasLayer/ShopMenuBackground"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 15.7868
+offset_top = 6.50345
+offset_right = 77.7868
+offset_bottom = 27.5034
+scale = Vector2(0.142743, 0.182179)
+theme_override_fonts/font = ExtResource("2_3ps0v")
+text = "Guns/Ammo"
+script = ExtResource("4_fjxs3")
+
+[node name="Upgrades" type="Button" parent="CanvasLayer/ShopMenuBackground"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 28.5849
+offset_top = 7.28386
+offset_right = 84.5849
+offset_bottom = 28.2839
+scale = Vector2(0.149379, 0.180665)
+theme_override_fonts/font = ExtResource("2_3ps0v")
+text = "Upgrades
+"
+script = ExtResource("5_8lhdl")
+
+[node name="ShopItems" type="CanvasLayer" parent="."]
+
+[connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/GunsAmmo" to="CanvasLayer/ShopMenuBackground/GunsAmmo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/GunsAmmo" to="CanvasLayer/ShopMenuBackground/GunsAmmo" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/Upgrades" to="CanvasLayer/ShopMenuBackground/Upgrades" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/Upgrades" to="CanvasLayer/ShopMenuBackground/Upgrades" method="_on_mouse_exited"]

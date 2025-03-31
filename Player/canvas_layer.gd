@@ -106,6 +106,8 @@ func get_upgrade_text(upgrade_id):
 		2: return "Bullet Velocity +"
 		3: return "2x Coins"
 		4: return "1.5x Coins"
+		5: return "Cooldown -"
+		6: return "Ammo +"
 
 
 
@@ -113,12 +115,12 @@ func _on_visibility_changed() -> void:
 	if self.visible == false:
 		return
 	var button_no = 0
-	var seen = [false, false, false, false, false]
+	var seen = [false, false, false, false, false, false, false]
 	for label in get_tree().get_nodes_in_group("bet_labels"):
 		
-		rand_upgrade1 = randi() % 5
+		rand_upgrade1 = randi() % 7
 		while seen[rand_upgrade1]:
-			rand_upgrade1 = randi() % 5
+			rand_upgrade1 = randi() % 7
 		label.text = get_upgrade_text(rand_upgrade1)
 		seen[rand_upgrade1] = true
 		

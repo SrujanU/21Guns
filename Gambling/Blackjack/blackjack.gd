@@ -260,12 +260,17 @@ func flip_end_game():
 
 func _on_backtogame_pressed():
 	#unpause the tree and allow the world scene to process again
-	get_tree().paused = false
+	
 	#make world scene visible
 	get_parent().get_child(1).visible = true
+	
 	#reset hand count for next game
 	Global.reset_blackjack()
 	#free the blackjack scene from the tree
+	$".".visible = false
+	$Window.visible = false
+	await get_tree().create_timer(1.5).timeout
+	get_tree().paused = false
 	queue_free()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cc3ixicd6v14q"]
+[gd_scene load_steps=62 format=3 uid="uid://cc3ixicd6v14q"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_sgyn8"]
 [ext_resource type="Texture2D" uid="uid://db41pfeq6133c" path="res://Textures/Player/acestarlight_spritesheet1/CowBoyHolsterWeapon.png" id="2_b1c3u"]
@@ -17,6 +17,10 @@
 [ext_resource type="Script" path="res://Player/speed.gd" id="14_8pspl"]
 [ext_resource type="AudioStream" uid="uid://cmftibauf22wi" path="res://SoundEffect/player death.wav" id="14_xvlpn"]
 [ext_resource type="Script" path="res://Player/bullet_speed.gd" id="15_7rko8"]
+[ext_resource type="Script" path="res://Player/ammo_label.gd" id="16_evyy0"]
+[ext_resource type="Texture2D" uid="uid://sas2jl6hsymv" path="res://Textures/GUI/progress-bar-circle.png" id="18_fyqje"]
+[ext_resource type="Script" path="res://Player/gun_cooldown.gd" id="19_i03pc"]
+[ext_resource type="Texture2D" uid="uid://b7eu00wrsq2ch" path="res://Textures/GUI/progress-bar-frame.png" id="19_my25i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mttxt"]
 atlas = ExtResource("2_b1c3u")
@@ -269,6 +273,14 @@ offset_bottom = -51.0
 scale = Vector2(8.00784, 0.908686)
 color = Color(0.145098, 0.145098, 0.145098, 0.501961)
 
+[node name="ColorRect2" type="ColorRect" parent="Camera2D"]
+offset_left = -165.0
+offset_top = 55.5
+offset_right = -125.0
+offset_bottom = 95.5
+scale = Vector2(1.88027, 0.932723)
+color = Color(0.145098, 0.145098, 0.145098, 0.501961)
+
 [node name="Score" type="Label" parent="Camera2D"]
 texture_filter = 1
 offset_left = -155.5
@@ -414,6 +426,15 @@ text = "   Bullet
    Speed"
 label_settings = SubResource("LabelSettings_xiom3")
 
+[node name="AmmoLabel" type="Label" parent="Camera2D"]
+texture_filter = 1
+offset_left = -153.0
+offset_top = 61.0
+offset_right = -113.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("5_sivn6")
+script = ExtResource("16_evyy0")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(2, 3)
@@ -440,7 +461,7 @@ wait_time = 1.5
 
 [node name="IceSpearAttackTimer" type="Timer" parent="Attack/IceSpearTimer"]
 unique_name_in_owner = true
-wait_time = 0.075
+wait_time = 1.508
 
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
 texture_filter = 1
@@ -456,6 +477,20 @@ position = Vector2(12, 2.5)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_xvlpn")
+
+[node name="CooldownBar" type="TextureProgressBar" parent="."]
+offset_left = 12.0
+offset_top = -19.0
+offset_right = 140.0
+offset_bottom = 109.0
+scale = Vector2(0.112761, 0.111747)
+fill_mode = 4
+texture_under = ExtResource("18_fyqje")
+texture_over = ExtResource("19_my25i")
+texture_progress = ExtResource("18_fyqje")
+tint_under = Color(0.00392157, 0.00392157, 0.00392157, 0.580392)
+tint_progress = Color(0.0509804, 1, 1, 1)
+script = ExtResource("19_i03pc")
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 [connection signal="timeout" from="Attack/IceSpearTimer" to="." method="_on_ice_spear_timer_timeout"]

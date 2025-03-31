@@ -12,11 +12,17 @@ var is_hit:bool = false
 #Attack Nodes
 @onready var iceSpearTimer = get_node("%IceSpearTimer")
 @onready var iceSpearAttackTimer = get_node("%IceSpearAttackTimer")
+
+
 #@onready var gun_barrel: Marker2D = $GunBarrel
 @onready var gun_barrel: Marker2D = $GunBarrel
+@onready var cooldown_bar: TextureProgressBar = $CooldownBar
+
+
+
 
 #IceSpear
-var icespear_ammo = 0
+var icespear_ammo = Global.ammo
 var icespear_baseammo = 1
 var icespear_attackspeed = 1.5
 var icespear_level = 1
@@ -43,11 +49,12 @@ func _ready():
 	
 	#attack()
 	pass
-
+var gun_cooldown:bool = false
 func _physics_process(delta):
 	movement()
 	# New Shooting Mechanics: arrow keys used to shoot in 4 directions  vertically and horizontally
-	if Input.is_action_just_pressed("shoot_left"):
+	
+	if Input.is_action_just_pressed("shoot_left") and not gun_cooldown and icespear_ammo > 0:
 		sprite.play("shoot")
 		var icespear_attack = iceSpear.instantiate()
 		icespear_attack.position = gun_barrel.global_position
@@ -56,11 +63,12 @@ func _physics_process(delta):
 		
 		add_child(icespear_attack)
 		icespear_ammo -= 1
-		if icespear_ammo > 0:
-			iceSpearAttackTimer.start()
-		else:
-			iceSpearAttackTimer.stop()
-	if Input.is_action_just_pressed("shoot_right"):
+		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
+		iceSpearAttackTimer.start()
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		gun_cooldown = true
+			
+	if Input.is_action_just_pressed("shoot_right") and not gun_cooldown and icespear_ammo > 0:
 		sprite.play("shoot")
 		var icespear_attack = iceSpear.instantiate()
 		icespear_attack.position = gun_barrel.global_position
@@ -69,12 +77,16 @@ func _physics_process(delta):
 		
 		add_child(icespear_attack)
 		icespear_ammo -= 1
-		if icespear_ammo > 0:
-			iceSpearAttackTimer.start()
-		else:
-			iceSpearAttackTimer.stop()
+		
+		
+		gun_cooldown = true
+		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
+		iceSpearAttackTimer.start()
+		
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		
 	
-	if Input.is_action_just_pressed("shoot_up"):
+	if Input.is_action_just_pressed("shoot_up") and not gun_cooldown and icespear_ammo > 0:
 		sprite.play("shoot")
 		var icespear_attack = iceSpear.instantiate()
 		icespear_attack.position = gun_barrel.global_position
@@ -83,12 +95,14 @@ func _physics_process(delta):
 		
 		add_child(icespear_attack)
 		icespear_ammo -= 1
-		if icespear_ammo > 0:
-			iceSpearAttackTimer.start()
-		else:
-			iceSpearAttackTimer.stop()
+		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
+		iceSpearAttackTimer.start()
+		gun_cooldown = true
+		
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		
 			
-	if Input.is_action_just_pressed("shoot_down"):
+	if Input.is_action_just_pressed("shoot_down") and not gun_cooldown and icespear_ammo > 0:
 		sprite.play("shoot")
 		var icespear_attack = iceSpear.instantiate()
 		icespear_attack.position = gun_barrel.global_position
@@ -97,10 +111,13 @@ func _physics_process(delta):
 		
 		add_child(icespear_attack)
 		icespear_ammo -= 1
-		if icespear_ammo > 0:
-			iceSpearAttackTimer.start()
-		else:
-			iceSpearAttackTimer.stop()	
+		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
+		iceSpearAttackTimer.start()
+		gun_cooldown = true
+		
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		
+		
 		
 		
 		
@@ -161,9 +178,9 @@ func _on_ice_spear_timer_timeout():
 	icespear_ammo += icespear_baseammo
 	iceSpearAttackTimer.start()
 
-
+# function that controls gun cooldown. Gun cannot be shot again while timer is running.
 func _on_ice_spear_attack_timer_timeout():
-	if icespear_ammo > 0:
+	'''if icespear_ammo > 0:
 		sprite.play("shoot")
 		var icespear_attack = iceSpear.instantiate()
 		icespear_attack.position = gun_barrel.global_position
@@ -175,7 +192,10 @@ func _on_ice_spear_attack_timer_timeout():
 		if icespear_ammo > 0:
 			iceSpearAttackTimer.start()
 		else:
-			iceSpearAttackTimer.stop()
+			iceSpearAttackTimer.stop()'''
+	cooldown_bar.hide()
+	if icespear_ammo > 0:
+		gun_cooldown = false
 		
 func get_random_target():
 	if enemy_close.size() > 0:
