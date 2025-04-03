@@ -1,14 +1,17 @@
+res://Textures/Player/acestarlight_spritesheet1
+res://World
+res://Textures/Items/Upgrades
+res://Player/Attack
+res://Textures/Items/Weapons
 res://Gambling/CoinShop
 /Users/jacksaigusa/Downloads/21Guns-master/21Guns-master/Exports/Windows
 /Users/jacksaigusa/Downloads/21Guns-master/21Guns-master/Exports/Mac
 /Users/jacksaigusa/Downloads/21Guns-master/21Guns-master/Exports/Web
 res://Gambling/sprites
 res://Textures/Items/Scenes
-res://Textures/Items/Upgrades
 res://
 res://Gambling/sprites/cards/dark
 res://Gambling/Blackjack
-res://Textures/Player/acestarlight_spritesheet1
 res://Textures/GUI
 res://Textures/Enemy
 res://Font
@@ -17,6 +20,3 @@ res://Gambling/
 res://Gambling
 /Users/jacksaigusa/21guns-main
 res://Textures
-res://Textures/Items/Weapons
-res://Textures/Player
-res://Player

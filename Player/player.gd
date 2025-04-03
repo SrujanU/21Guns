@@ -63,9 +63,10 @@ func _physics_process(delta):
 		
 		add_child(icespear_attack)
 		icespear_ammo -= 1
+		
 		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
 		iceSpearAttackTimer.start()
-		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time)
 		gun_cooldown = true
 			
 	if Input.is_action_just_pressed("shoot_right") and not gun_cooldown and icespear_ammo > 0:
@@ -83,7 +84,7 @@ func _physics_process(delta):
 		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
 		iceSpearAttackTimer.start()
 		
-		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time)
 		
 	
 	if Input.is_action_just_pressed("shoot_up") and not gun_cooldown and icespear_ammo > 0:
@@ -95,11 +96,12 @@ func _physics_process(delta):
 		
 		add_child(icespear_attack)
 		icespear_ammo -= 1
+		
 		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
 		iceSpearAttackTimer.start()
 		gun_cooldown = true
 		
-		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time)
 		
 			
 	if Input.is_action_just_pressed("shoot_down") and not gun_cooldown and icespear_ammo > 0:
@@ -111,11 +113,12 @@ func _physics_process(delta):
 		
 		add_child(icespear_attack)
 		icespear_ammo -= 1
+		
 		iceSpearAttackTimer.wait_time = Global.icespear_attackspeed
 		iceSpearAttackTimer.start()
 		gun_cooldown = true
 		
-		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time-iceSpearAttackTimer.time_left, iceSpearAttackTimer.wait_time)
+		cooldown_bar.set_cooldown_bar(iceSpearAttackTimer.wait_time)
 		
 		
 		
@@ -159,6 +162,7 @@ func attack():
 
 func _on_hurt_box_hurt(damage):
 	if is_dead:
+		
 		return
 	Global.health -= damage
 	
@@ -168,6 +172,10 @@ func _on_hurt_box_hurt(damage):
 	## TODO zz: Just go ahead and put the character death sound effect here.
 	if Global.health <= 0:
 		death_audio_stream_player.play()
+		Global.reset_game_state()
+		
+		get_tree().reload_current_scene()
+		
 		is_dead = true
 	
 	
@@ -232,3 +240,10 @@ func _on_enemy_detection_area_body_exited(body):
 
 func get_distance(player_position, enemy_position):
 	return player_position.distance_to(enemy_position)
+
+#end of level 1
+func level_end():
+	#score == 30
+	pass
+	
+		

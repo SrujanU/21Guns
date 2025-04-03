@@ -1,8 +1,8 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1743445001
+::res://::1743632077
 default_bus_layout.tres::AudioBusLayout::7642183820440874814::1741535624::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1742837186::0::1::::<><>::
-Global.gd::GDScript::-1::1743442064::0::1::::<>Node<>::
+export_presets.cfg::TextFile::-1::1743447031::0::1::::<><>::
+Global.gd::GDScript::-1::1743625168::0::1::::<>Node<>::
 Godot_v4.3-stable_win64.20250309-235435-546.log::TextFile::-1::1741554568::0::1::::<><>::
 Godot_v4.3-stable_win64.20250309-235454-279.log::TextFile::-1::1741535694::0::1::::<><>::
 Godot_v4.3-stable_win64.20250309-235728-211.log::TextFile::-1::1741535848::0::1::::<><>::
@@ -13,7 +13,7 @@ Godot_v4.3-stable_win64.20250310-070622-412.log::TextFile::-1::1741608382::0::1:
 Godot_v4.3-stable_win64.20250310-071055-856.log::TextFile::-1::1741608706::0::1::::<><>::
 icon.svg::CompressedTexture2D::1730451811002220422::1741535624::1741601619::1::::<><>::
 main.gd::GDScript::-1::1741535624::0::1::::<>Node<>::
-main.tscn::PackedScene::83837490869403161::1743445001::0::1::::<><>::res://main.gd<>uid://cwwlg3y4hol0n::::res://Menu/menu.tscn
+main.tscn::PackedScene::83837490869403161::1743632077::0::1::::<><>::res://main.gd<>uid://cwwlg3y4hol0n::::res://Menu/menu.tscn
 menu.gd::GDScript::-1::1741535624::0::1::::<>Control<>::
 README.md::TextFile::-1::1741535624::0::1::::<><>::
 ::res://Audio/::1741601515
@@ -26,7 +26,8 @@ hover.wav::AudioStreamWAV::2038624782375088912::1741535632::1741601619::1::::<><
 ::res://Audio/Music/::1741601619
 battleThemeA.mp3::AudioStreamMP3::457783039781635984::1741535632::1741601619::1::::<><>::
 Beat Mekanik - Retro Arcade.mp3::AudioStreamMP3::5979045786449366832::1741535632::1741601619::1::::<><>::
-::res://Audio/SoundEffect/::1741601619
+::res://Audio/SoundEffect/::1743580345
+8-bit-victory-sound-101319.mp3::AudioStreamMP3::777298223031907249::1743529113::1743529113::1::::<><>::
 collectgem.mp3::AudioStreamMP3::3468743926155325429::1741535632::1741601619::1::::<><>::
 enemy_death.ogg::AudioStreamOggVorbis::1756207174683410008::1741535632::1741601619::1::::<><>::
 enemy_hit.ogg::AudioStreamOggVorbis::5790578912983364607::1741535632::1741601619::1::::<><>::
@@ -37,19 +38,33 @@ ice.wav::AudioStreamWAV::1853782114860477719::1741535632::1741601619::1::::<><>:
 level-up-bonus-sequence-2-186891.mp3::AudioStreamMP3::3731213494314471003::1741535632::1741601619::1::::<><>::
 levelup.ogg::AudioStreamOggVorbis::2473279847861848904::1741535632::1741601619::1::::<><>::
 Lose.ogg::AudioStreamOggVorbis::5409440633062708329::1741535632::1741601619::1::::<><>::
+medkit_sound.mp3::AudioStreamMP3::3577040078668027294::1743580345::1743580345::1::::<><>::
 tornado.ogg::AudioStreamOggVorbis::1224143930061242614::1741535632::1741601619::1::::<><>::
 Victory.wav::AudioStreamWAV::9135940349420344106::1741535632::1741601619::1::::<><>::
 woosh.wav::AudioStreamWAV::4884369534186195647::1741535632::1741601619::1::::<><>::
 ::res://Cover/::1741601619
 cover.tscn::PackedScene::8358558701372852263::1741535632::0::1::::<><>::uid://5i8wo4wv4xv6::::res://Cover/pixil-frame-0.png
 pixil-frame-0.png::CompressedTexture2D::2124224060555690365::1741535632::1741601619::1::::<><>::
-::res://Enemy/::1743445001
+::res://Enemy/::1743632077
 enemy.gd::GDScript::-1::1743441312::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::1761442482626564188::1743445001::0::1::::<><>::res://Enemy/enemy.gd<>uid://b8weur5bmybnw::::res://Textures/Enemy/enemy_death_spritesheet.png<>uid://c53xho6nle46x::::res://Textures/Enemy/MantisMove.png<>uid://bhfblyadw3s6q::::res://Utility/hurt_box.tscn<>uid://fhho6ecnkp82::::res://Utility/hit_box.tscn<>uid://0ayqf1jj3nau::::res://Audio/SoundEffect/enemy_death.ogg
+enemy.tscn::PackedScene::1761442482626564188::1743632077::0::1::::<><>::res://Enemy/enemy.gd<>uid://b8weur5bmybnw::::res://Textures/Enemy/enemy_death_spritesheet.png<>uid://c53xho6nle46x::::res://Textures/Enemy/MantisMove.png<>uid://bhfblyadw3s6q::::res://Utility/hurt_box.tscn<>uid://fhho6ecnkp82::::res://Utility/hit_box.tscn<>uid://0ayqf1jj3nau::::res://Audio/SoundEffect/enemy_death.ogg
+::res://Exports/::1743447017
+::res://Exports/Mac/::1743447062
+::res://Exports/Mac/team12_sprint6_21guns_mac.app/::1743446948
+::res://Exports/Mac/team12_sprint6_21guns_mac.app/Contents/::1743446949
+::res://Exports/Mac/team12_sprint6_21guns_mac.app/Contents/_CodeSignature/::1743446949
+::res://Exports/Mac/team12_sprint6_21guns_mac.app/Contents/Frameworks/::1743446948
+::res://Exports/Mac/team12_sprint6_21guns_mac.app/Contents/MacOS/::1743446950
+::res://Exports/Mac/team12_sprint6_21guns_mac.app/Contents/Resources/::1743446949
+::res://Exports/Web/::1743446924
+index.apple-touch-icon.png::CompressedTexture2D::2231636969947922311::1743446592::1743446924::1::::<><>::
+index.icon.png::CompressedTexture2D::7487491590640833881::1743446592::1743446924::1::::<><>::
+index.png::CompressedTexture2D::8173885799389800855::1743446592::1743446924::1::::<><>::
+::res://Exports/Windows/::1743447030
 ::res://Font/::1741601619
 monogram-extended.ttf::FontFile::5642404520122871560::1741535632::1741601619::1::::<><>::
 tenderness.otf::FontFile::3771117226749018118::1741535632::1741601619::1::::<><>::
-::res://Gambling/::1743445001
+::res://Gambling/::1743632077
 bet_1.gd::GDScript::-1::1741535632::0::1::::<>Label<>::
 bet_2.gd::GDScript::-1::1741535632::0::1::::<>Label<>::
 bet_3.gd::GDScript::-1::1741535632::0::1::::<>Label<>::
@@ -58,26 +73,34 @@ bet_button.tscn::PackedScene::8387947079232412983::1741535632::0::1::::<><>::uid
 keep_coins.gd::GDScript::-1::1741535632::0::1::::<>Button<>::
 label_2.gd::GDScript::-1::1741535632::0::1::::<>Label<>::
 levelup_screen.gd::GDScript::-1::1741535632::0::1::::<>Control<>::
-levelup_screen.tscn::PackedScene::428647581652005508::1743445001::0::1::::<><>::uid://drrgi66bqcp5p::::res://Gambling/bet_button.tscn<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Gambling/label_2.gd<>res://Gambling/keep_coins.gd<>res://Gambling/bet_1.gd<>res://Gambling/bet_2.gd<>res://Gambling/bet_3.gd
-levelup_screen_main.tscn::PackedScene::7901810106966097329::1743445001::0::1::::<><>::res://Player/canvas_layer.gd<>uid://gdv07cwwddfw::::res://Gambling/levelup_screen.tscn<>uid://btfosnr7pf5lv::::res://Audio/SoundEffect/level-up-bonus-sequence-2-186891.mp3<>res://Gambling/level_1_tutorial.gd<>uid://b8d37q01obh8::::res://Gambling/sprites/level1_cutscene_0.png<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf
-level_1_tutorial.gd::GDScript::-1::1742491737::0::1::::<>CanvasLayer<>::
-::res://Gambling/Blackjack/::1743445001
-blackjack.gd::GDScript::-1::1743108046::0::1::::Blackjack<>Node2D<>::
-blackjack.tscn::PackedScene::7733189278566725509::1743445001::0::1::::<><>::uid://cwnpo1qoh72st::::res://Gambling/sprites/table.jpg<>res://Gambling/Blackjack/blackjack.gd<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Gambling/Blackjack/stand.gd<>res://Gambling/Blackjack/hit.gd<>uid://bv7pw5lrjx80e::::res://Audio/Blackjack/card-sounds-35956.mp3<>uid://c0m8cuu8ggy3p::::res://Audio/SoundEffect/game-over-arcade-6435.mp3<>uid://c7exqsvjyrsxt::::res://Audio/SoundEffect/game_won.wav<>uid://cbgmeqpht5fac::::res://Audio/Blackjack/Blackjack_music.mp3<>res://Gambling/Blackjack/canvas_layer.gd<>uid://cv62l1tvbe77b::::res://Gambling/sprites/acestarlight_blackjack_cutscene.png
-blackjack_placeholder.tscn::PackedScene::5131977942459719307::1741535632::0::1::::<><>::
+levelup_screen.tscn::PackedScene::428647581652005508::1743632077::0::1::::<><>::uid://drrgi66bqcp5p::::res://Gambling/bet_button.tscn<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Gambling/label_2.gd<>res://Gambling/keep_coins.gd<>res://Gambling/bet_1.gd<>res://Gambling/bet_2.gd<>res://Gambling/bet_3.gd
+levelup_screen_main.tscn::PackedScene::7901810106966097329::1743632077::0::1::::<><>::res://Player/canvas_layer.gd<>uid://gdv07cwwddfw::::res://Gambling/levelup_screen.tscn<>uid://btfosnr7pf5lv::::res://Audio/SoundEffect/level-up-bonus-sequence-2-186891.mp3<>res://Gambling/level_1_tutorial.gd<>uid://b8d37q01obh8::::res://Gambling/sprites/level1_cutscene_0.png<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>uid://lcr8uk8lk2bd::::res://Audio/SoundEffect/8-bit-victory-sound-101319.mp3
+level_1_tutorial.gd::GDScript::-1::1743534145::0::1::::<>CanvasLayer<>::
+::res://Gambling/Blackjack/::1743632077
+blackjack.gd::GDScript::-1::1743527870::0::1::::Blackjack<>Node2D<>::
+blackjack.tscn::PackedScene::7733189278566725509::1743632077::0::1::::<><>::uid://cwnpo1qoh72st::::res://Gambling/sprites/table.jpg<>res://Gambling/Blackjack/blackjack.gd<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Gambling/Blackjack/stand.gd<>res://Gambling/Blackjack/hit.gd<>uid://bv7pw5lrjx80e::::res://Audio/Blackjack/card-sounds-35956.mp3<>uid://c0m8cuu8ggy3p::::res://Audio/SoundEffect/game-over-arcade-6435.mp3<>uid://c7exqsvjyrsxt::::res://Audio/SoundEffect/game_won.wav<>uid://cbgmeqpht5fac::::res://Audio/Blackjack/Blackjack_music.mp3<>res://Gambling/Blackjack/canvas_layer.gd<>uid://cv62l1tvbe77b::::res://Gambling/sprites/acestarlight_blackjack_cutscene.png
+blackjack_placeholder.tscn::PackedScene::5131977942459719307::1743625428::0::1::::<><>::
 canvas_layer.gd::GDScript::-1::1741535632::0::1::::<>CanvasLayer<>::
 card.gd::GDScript::-1::1741535632::0::1::::Card<>Node2D<>::
-card.tscn::PackedScene::3644022291164652538::1743445001::0::1::::<><>::res://Gambling/Blackjack/card.gd<>uid://my1t6uyqhm6c::::res://Gambling/sprites/cards/dark/BACK.png
+card.tscn::PackedScene::3644022291164652538::1743632077::0::1::::<><>::res://Gambling/Blackjack/card.gd<>uid://my1t6uyqhm6c::::res://Gambling/sprites/cards/dark/BACK.png
 hit.gd::GDScript::-1::1741535632::0::1::::<>Button<>::
 stand.gd::GDScript::-1::1741535632::0::1::::<>Button<>::
-::res://Gambling/CoinShop/::1743445002
-coin_shop.tscn::PackedScene::2308200053744046344::1743445002::0::1::::<><>::res://Gambling/CoinShop/coin_shop.gd<>uid://b6kxd54d3dwas::::res://Gambling/sprites/coin_shop_background.png<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Gambling/CoinShop/armour_hp.gd<>res://Gambling/CoinShop/guns_ammo.gd<>res://Gambling/CoinShop/upgrades.gd
-armour_hp.gd::GDScript::-1::1743110524::0::1::::<>Button<>::
-guns_ammo.gd::GDScript::-1::1743110767::0::1::::<>Button<>::
-coin_shop.gd::GDScript::-1::1743110903::0::1::::<>Node2D<>::
-armour_shop.tscn::PackedScene::9000827628393880266::1743445002::0::1::::<><>::uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf
-upgrades.gd::GDScript::-1::1743110767::0::1::::<>Button<>::
-::res://Gambling/sprites/::1743109006
+::res://Gambling/CoinShop/::1743632078
+armour_hp.gd::GDScript::-1::1743579585::0::1::::<>Button<>::
+armour_shop.tscn::PackedScene::9000827628393880266::1743632078::0::1::::<><>::uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>uid://bbs2ox2iwi6bk::::res://Gambling/CoinShop/space_background.png<>res://Gambling/CoinShop/button.gd<>uid://bs3hpjexsvqt1::::res://Textures/Items/Upgrades/coin2_20x20.png
+coin_shop.gd::GDScript::-1::1743630514::0::1::::<>Node2D<>::
+coin_shop.tscn::PackedScene::2308200053744046344::1743632078::0::1::::<><>::res://Gambling/CoinShop/coin_shop.gd<>uid://b6kxd54d3dwas::::res://Gambling/sprites/coin_shop_background.png<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Gambling/CoinShop/armour_hp.gd<>res://Gambling/CoinShop/guns_ammo.gd<>res://Gambling/CoinShop/upgrades.gd<>uid://d1ick0kfhi2eg::::res://Gambling/CoinShop/armour_shop.tscn
+guns_ammo.gd::GDScript::-1::1743570523::0::1::::<>Button<>::
+level1_end_cutscene.png::CompressedTexture2D::5298793518468890517::1743615553::1743615553::1::::<><>::
+pixel_art_background (1).png::CompressedTexture2D::1534359175820361872::1743572801::1743572802::1::::<><>::
+pixel_item_background (1).png::CompressedTexture2D::690932992925606489::1743573462::1743573462::1::::<><>::
+pixel_item_background.png::CompressedTexture2D::4617180615822063257::1743573089::1743573127::1::::<><>::
+pixel_item_background_scaled.png::CompressedTexture2D::2218121868314987707::1743573213::1743573213::1::::<><>::
+button.gd::GDScript::-1::1743575054::0::1::::<>Button<>::
+shop_background.png::CompressedTexture2D::743384976240096528::1743454037::1743454038::1::::<><>::
+space_background.png::CompressedTexture2D::2495433936963578120::1743454196::1743454196::1::::<><>::
+upgrades.gd::GDScript::-1::1743570523::0::1::::<>Button<>::
+::res://Gambling/sprites/::1743572162
 acestarlight_blackjack_cutscene.png::CompressedTexture2D::6312463192612446801::1741535632::1741601619::1::::<><>::
 Chips.png::CompressedTexture2D::1127116493918882943::1741535632::1741601619::1::::<><>::
 coin_shop_background.png::CompressedTexture2D::4584322082901745506::1743109000::1743109006::1::::<><>::
@@ -222,32 +245,33 @@ Q-C.png::CompressedTexture2D::4750589285776712624::1741535634::1741601619::1::::
 Q-D.png::CompressedTexture2D::2789278208069561739::1741535634::1741601619::1::::<><>::
 Q-H.png::CompressedTexture2D::299838079132951575::1741535636::1741601619::1::::<><>::
 Q-P.png::CompressedTexture2D::1858136648914858200::1741535636::1741601619::1::::<><>::
-::res://Menu/::1743445001
-menu.tscn::PackedScene::6363092348752745611::1743445001::0::1::::<><>::res://menu.gd<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>uid://cwx6b16vltrfo::::res://Textures/MenuBackground.png
-::res://Player/::1743445002
+::res://Menu/::1743632077
+menu.tscn::PackedScene::6363092348752745611::1743632077::0::1::::<><>::res://menu.gd<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>uid://cwx6b16vltrfo::::res://Textures/MenuBackground.png
+::res://Player/::1743632077
+ammo_label.gd::GDScript::-1::1743530556::0::1::::<>Label<>::
 attack_power.gd::GDScript::-1::1743010980::0::1::::<>TextureProgressBar<>::
 bullet_speed.gd::GDScript::-1::1743442276::0::1::::<>TextureProgressBar<>::
-canvas_layer.gd::GDScript::-1::1743441117::0::1::::<>CanvasLayer<>::
+canvas_layer.gd::GDScript::-1::1743609880::0::1::::<>CanvasLayer<>::
 coins.gd::GDScript::-1::1741535636::0::1::::<>Label<>::
+gun_cooldown.gd::GDScript::-1::1743567295::0::1::::<>TextureProgressBar<>::
 health.gd::GDScript::-1::1741535636::0::1::::<>Label<>::
 healthbar.gd::GDScript::-1::1741535636::0::1::::<>TextureProgressBar<>::
 kill_counter_label.gd::GDScript::-1::1741535636::0::1::::<>Label<>::
 level.gd::GDScript::-1::1741535636::0::1::::<>Label<>::
-player.gd::GDScript::-1::1743440843::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::4971548864432884042::1743445002::0::1::::<><>::res://Player/player.gd<>uid://db41pfeq6133c::::res://Textures/Player/acestarlight_spritesheet1/CowBoyHolsterWeapon.png<>uid://6qj56eey2svu::::res://Textures/Player/acestarlight_spritesheet1/CowBoySmokingIdle.png<>uid://bhfblyadw3s6q::::res://Utility/hurt_box.tscn<>res://World/score.gd<>uid://c7m8q4wfrst3x::::res://Textures/Player/acestarlight_spritesheet1/CowBoyWalking.png<>res://Player/health.gd<>uid://durgda0wv04a2::::res://Textures/Player/acestarlight_spritesheet1/CowBoyShoot.png<>res://Player/level.gd<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Player/progress_bar.gd<>res://Player/healthbar.gd<>res://Player/coins.gd<>res://Player/attack_power.gd<>res://Player/speed.gd<>uid://cmftibauf22wi::::res://SoundEffect/player death.wav<>res://Player/bullet_speed.gd<>res://Player/ammo_label.gd<>uid://sas2jl6hsymv::::res://Textures/GUI/progress-bar-circle.png<>res://Player/gun_cooldown.gd<>uid://b7eu00wrsq2ch::::res://Textures/GUI/progress-bar-frame.png
-progress_bar.gd::GDScript::-1::1743024887::0::1::::<>TextureProgressBar<>::
-gun_cooldown.gd::GDScript::-1::1743434562::0::1::::<>TextureProgressBar<>::
-ammo_label.gd::GDScript::-1::1743443027::0::1::::<>Label<>::
+player.gd::GDScript::-1::1743628955::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::4971548864432884042::1743632077::0::1::::<><>::res://Player/player.gd<>uid://db41pfeq6133c::::res://Textures/Player/acestarlight_spritesheet1/CowBoyHolsterWeapon.png<>uid://6qj56eey2svu::::res://Textures/Player/acestarlight_spritesheet1/CowBoySmokingIdle.png<>uid://bhfblyadw3s6q::::res://Utility/hurt_box.tscn<>res://World/score.gd<>uid://c7m8q4wfrst3x::::res://Textures/Player/acestarlight_spritesheet1/CowBoyWalking.png<>res://Player/health.gd<>uid://durgda0wv04a2::::res://Textures/Player/acestarlight_spritesheet1/CowBoyShoot.png<>res://Player/level.gd<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://Player/progress_bar.gd<>res://Player/healthbar.gd<>res://Player/coins.gd<>res://Player/attack_power.gd<>res://Player/speed.gd<>uid://cmftibauf22wi::::res://SoundEffect/player death.wav<>res://Player/bullet_speed.gd<>res://Player/ammo_label.gd<>uid://dpx42pf71iu4s::::res://Textures/Items/Weapons/ammo-pistol 32px.png<>uid://b1w5oos5lt4qj::::res://Player/Attack/cooldown_bar.tscn
+progress_bar.gd::GDScript::-1::1743609880::0::1::::<>TextureProgressBar<>::
 speed.gd::GDScript::-1::1743442276::0::1::::<>TextureProgressBar<>::
-::res://Player/Attack/::1743445001
-ice_spear.gd::GDScript::-1::1741605611::0::1::::<>Area2D<>::
-ice_spear.tscn::PackedScene::9048232128716762809::1743445001::0::1::::<><>::res://Player/Attack/ice_spear.gd<>uid://c46eokr0037ib::::res://Textures/Items/Weapons/All_Fire_Bullet_Pixel_16x16.png<>uid://uh8fc3nhwcm6::::res://SoundEffect/shoot.mp3
+::res://Player/Attack/::1743632078
+cooldown_bar.tscn::PackedScene::4258594204280845349::1743632078::0::1::::<><>::uid://sas2jl6hsymv::::res://Textures/GUI/progress-bar-circle.png<>uid://b7eu00wrsq2ch::::res://Textures/GUI/progress-bar-frame.png<>res://Player/gun_cooldown.gd
+ice_spear.gd::GDScript::-1::1743530183::0::1::::<>Area2D<>::
+ice_spear.tscn::PackedScene::9048232128716762809::1743632077::0::1::::<><>::res://Player/Attack/ice_spear.gd<>uid://c46eokr0037ib::::res://Textures/Items/Weapons/All_Fire_Bullet_Pixel_16x16.png<>uid://uh8fc3nhwcm6::::res://SoundEffect/shoot.mp3
 ::res://SoundEffect/::1743058017
 coin-recieved-230517.mp3::AudioStreamMP3::2720736382091436848::1743058017::1743058017::1::::<><>::
 enemy daed.wav::AudioStreamWAV::5031989901523683565::1739985964::1741620999::1::::<><>::
 player death.wav::AudioStreamWAV::5626597342466525064::1741555508::1741604645::1::::<><>::
 shoot.mp3::AudioStreamMP3::1420240255671990143::1741555334::1741604645::1::::<><>::
-::res://Textures/::1743445065
+::res://Textures/::1743445066
 BACKGROUND.jpg::CompressedTexture2D::7475523368089474526::1741553866::1741601829::1::::<><>::
 blue-preview.png::CompressedTexture2D::5320647229333862378::1741535636::1741601619::1::::<><>::
 dirt_full_new.png::CompressedTexture2D::3182341938338909996::1741535636::1741601619::1::::<><>::
@@ -278,11 +302,11 @@ progress-bar-frame.png::CompressedTexture2D::4641981523695895287::1743432385::17
 Gem_blue.png::CompressedTexture2D::9051577810669923211::1741535636::1741601619::1::::<><>::
 Gem_green.png::CompressedTexture2D::8481318894037314453::1741535636::1741601619::1::::<><>::
 Gem_red.png::CompressedTexture2D::7314641689342120522::1741535636::1741601619::1::::<><>::
-::res://Textures/Items/Scenes/::1743445001
-coin_pickup.gd::GDScript::-1::1743059266::0::1::::<>Area2D<>::
-coin_pickup.tscn::PackedScene::7851966227972797479::1743445001::0::1::::<><>::res://Textures/Items/Scenes/coin_pickup.gd<>uid://bs3hpjexsvqt1::::res://Textures/Items/Upgrades/coin2_20x20.png<>uid://be07epdmpqa5e::::res://SoundEffect/coin-recieved-230517.mp3
-medkit.gd::GDScript::-1::1741535636::0::1::::<>Area2D<>::
-medkit.tscn::PackedScene::2717369893586771883::1743445001::0::1::::<><>::uid://68rf6xlo68a0::::res://Textures/Items/Upgrades/med_kit.png<>res://Textures/Items/Scenes/medkit.gd
+::res://Textures/Items/Scenes/::1743632077
+coin_pickup.gd::GDScript::-1::1743527970::0::1::::<>Area2D<>::
+coin_pickup.tscn::PackedScene::7851966227972797479::1743632077::0::1::::<><>::res://Textures/Items/Scenes/coin_pickup.gd<>uid://bs3hpjexsvqt1::::res://Textures/Items/Upgrades/coin2_20x20.png<>uid://be07epdmpqa5e::::res://SoundEffect/coin-recieved-230517.mp3
+medkit.gd::GDScript::-1::1743606709::0::1::::<>Area2D<>::
+medkit.tscn::PackedScene::2717369893586771883::1743632077::0::1::::<><>::uid://68rf6xlo68a0::::res://Textures/Items/Upgrades/med_kit.png<>res://Textures/Items/Scenes/medkit.gd<>uid://bq70letocxtwo::::res://Audio/SoundEffect/medkit_sound.mp3
 ::res://Textures/Items/Upgrades/::1741601619
 boots_4_green.png::CompressedTexture2D::5357030419781452185::1741535636::1741601619::1::::<><>::
 chunk.png::CompressedTexture2D::4214239817605747718::1741535636::1741601619::1::::<><>::
@@ -293,8 +317,12 @@ med_kit.png::CompressedTexture2D::2245021400783641877::1741535636::1741601619::1
 scroll_old.png::CompressedTexture2D::5180740271240436690::1741535636::1741601619::1::::<><>::
 thick_new.png::CompressedTexture2D::1565986746565550895::1741535636::1741601619::1::::<><>::
 urand_mage.png::CompressedTexture2D::4817953964843933240::1741535636::1741601619::1::::<><>::
-::res://Textures/Items/Weapons/::1741601619
+::res://Textures/Items/Weapons/::1743530427
 All_Fire_Bullet_Pixel_16x16.png::CompressedTexture2D::6872581965016336993::1741535636::1741601619::1::::<><>::
+ammo-pistol 32px.png::CompressedTexture2D::8261385200282114524::1743530412::1743530412::1::::<><>::
+ammo-pistol-alt 32px.png::CompressedTexture2D::9127979632960759936::1743530399::1743530399::1::::<><>::
+ammo-rifle 32px.png::CompressedTexture2D::6846079808009531593::1743530418::1743530419::1::::<><>::
+ammo-shotgun-alt 32px.png::CompressedTexture2D::3557490725576609902::1743530427::1743530427::1::::<><>::
 ice_spear.png::CompressedTexture2D::6138383140518428079::1741535636::1741601619::1::::<><>::
 javelin_3_new.png::CompressedTexture2D::380521542075974140::1741535636::1741601619::1::::<><>::
 javelin_3_new_attack.png::CompressedTexture2D::1741437215176914919::1741535636::1741601619::1::::<><>::
@@ -303,7 +331,7 @@ tornado.png::CompressedTexture2D::5078242871079937852::1741535636::1741601619::1
 ::res://Textures/Player/::1741601619
 acestarlight_spritesheet.png::CompressedTexture2D::1719147832799893323::1741535636::1741601619::1::::<><>::
 player_sprite.png::CompressedTexture2D::1006703677184400904::1741535636::1741601619::1::::<><>::
-::res://Textures/Player/acestarlight_spritesheet1/::1741601619
+::res://Textures/Player/acestarlight_spritesheet1/::1743633667
 CowBoyDrawWeapon.png::CompressedTexture2D::5555418666682579653::1741535636::1741601619::1::::<><>::
 CowBoyHolsterWeapon.png::CompressedTexture2D::7290923547870987370::1741535636::1741601619::1::::<><>::
 CowBoyIdle.png::CompressedTexture2D::5074266467241530495::1741535636::1741601619::1::::<><>::
@@ -312,19 +340,22 @@ CowBoyRapidFire.png::CompressedTexture2D::8431236795351662373::1741535636::17416
 CowBoyShoot.png::CompressedTexture2D::8598503044646049447::1741535636::1741601619::1::::<><>::
 CowBoySmokingIdle.png::CompressedTexture2D::2209485858213974014::1741535636::1741601619::1::::<><>::
 CowBoyWalking.png::CompressedTexture2D::7045690687729203931::1741535636::1741601619::1::::<><>::
-::res://Utility/::1743445002
-enemy_spawner.gd::GDScript::-1::1743441817::0::1::::<>Node2D<>::
-enemy_spawner.tscn::PackedScene::7413652983722237147::1743445002::0::1::::<><>::res://Utility/enemy_spawner.gd<>res://Utility/spawn_info.gd<>uid://0dix2uecrfmi::::res://Enemy/enemy.tscn
+iron_marshals_rig.png::CompressedTexture2D::6718723664573239917::1743633667::1743633668::1::::<><>::
+::res://Utility/::1743632078
+enemy_spawner.gd::GDScript::-1::1743628424::0::1::::<>Node2D<>::
+enemy_spawner.tscn::PackedScene::7413652983722237147::1743632078::0::1::::<><>::res://Utility/enemy_spawner.gd<>res://Utility/spawn_info.gd<>uid://0dix2uecrfmi::::res://Enemy/enemy.tscn
 hit_box.gd::GDScript::-1::1741535636::0::1::::<>Area2D<>::
 hit_box.tscn::PackedScene::365846517044341017::1741535636::0::1::::<><>::res://Utility/hit_box.gd
 hurt_box.gd::GDScript::-1::1741535636::0::1::::<>Area2D<>::
 hurt_box.tscn::PackedScene::2888146099382578454::1741535636::0::1::::<><>::res://Utility/hurt_box.gd
 spawn_info.gd::GDScript::-1::1741535636::0::1::::Spawn_info<>Resource<>::
-::res://World/::1743445001
+::res://World/::1743632078
 canvas_layer.gd::GDScript::-1::1741535636::0::1::::<>CanvasLayer<>::
 label.gd::GDScript::-1::1741535636::0::1::::<>Node2D<>::
-score.gd::GDScript::-1::1742490447::0::1::::<>Label<>::
+level1_end.tscn::PackedScene::6816171845523729729::1743632078::0::1::::<><>::uid://v4iw3g16nrjc::::res://Gambling/CoinShop/pixel_art_background (1).png<>res://World/level_1_end.gd<>uid://chq1mcqj5dr62::::res://Gambling/CoinShop/level1_end_cutscene.png<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf
+level_1_end.gd::GDScript::-1::1743622685::0::1::::<>CanvasLayer<>::
+score.gd::GDScript::-1::1743531040::0::1::::<>Label<>::
 tutorial.gd::GDScript::-1::1743178329::0::1::::<>Window<>::
 ui.gd::GDScript::-1::1741535636::0::1::::<>CanvasLayer<>::
 world.gd::GDScript::-1::1741535636::0::1::::<>Node2D<>::
-world.tscn::PackedScene::2998911713734722278::1743445001::0::1::::<><>::uid://ch2mjut2n2ba5::::res://Textures/blue-preview.png<>uid://dktxwmv0rcs4p::::res://Gambling/levelup_screen_main.tscn<>res://World/world.gd<>uid://cc3ixicd6v14q::::res://Player/player.tscn<>uid://derg1paegwt5g::::res://Textures/BACKGROUND.jpg<>uid://drc7ige8ak3cd::::res://Cover/cover.tscn<>uid://ddvh1tn3dju7t::::res://Utility/enemy_spawner.tscn<>uid://crgkamg10vg2k::::res://Audio/Music/Beat Mekanik - Retro Arcade.mp3<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://World/tutorial.gd<>uid://beykxkasd7uop::::res://Textures/Items/Scenes/medkit.tscn<>uid://dj4s0bq4gexud::::res://Textures/Items/Scenes/coin_pickup.tscn<>uid://qc4u88g2fhks::::res://Textures/obstacle_1 (1).png<>uid://blkgnbbt5boh8::::res://Textures/obstacle_3.png
+world.tscn::PackedScene::2998911713734722278::1743632077::0::1::::<><>::uid://ch2mjut2n2ba5::::res://Textures/blue-preview.png<>uid://dktxwmv0rcs4p::::res://Gambling/levelup_screen_main.tscn<>res://World/world.gd<>uid://cc3ixicd6v14q::::res://Player/player.tscn<>uid://derg1paegwt5g::::res://Textures/BACKGROUND.jpg<>uid://ddvh1tn3dju7t::::res://Utility/enemy_spawner.tscn<>uid://crgkamg10vg2k::::res://Audio/Music/Beat Mekanik - Retro Arcade.mp3<>uid://cmnhtwi5gsqii::::res://Font/monogram-extended.ttf<>res://World/tutorial.gd<>uid://beykxkasd7uop::::res://Textures/Items/Scenes/medkit.tscn<>uid://dj4s0bq4gexud::::res://Textures/Items/Scenes/coin_pickup.tscn<>uid://qc4u88g2fhks::::res://Textures/obstacle_1 (1).png<>uid://blkgnbbt5boh8::::res://Textures/obstacle_3.png<>uid://dem7h2ltoalr6::::res://Textures/obstacle_2.png<>uid://c4d2mby60hpvt::::res://World/level1_end.tscn

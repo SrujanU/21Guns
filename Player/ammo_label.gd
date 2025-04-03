@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 	update_ammo_label()
 
 func update_ammo_label():
-	$".".text = "Ammo: " + str(get_parent().get_parent().icespear_ammo)
+	text = str(get_parent().get_parent().icespear_ammo)
+	

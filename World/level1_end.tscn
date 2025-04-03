@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4d2mby60hpvt"]
+
+[ext_resource type="Texture2D" uid="uid://v4iw3g16nrjc" path="res://Gambling/CoinShop/pixel_art_background (1).png" id="1_4uhna"]
+[ext_resource type="Script" path="res://World/level_1_end.gd" id="1_it4j3"]
+[ext_resource type="Texture2D" uid="uid://chq1mcqj5dr62" path="res://Gambling/CoinShop/level1_end_cutscene.png" id="2_gd5mi"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="3_nfrku"]
+
+[node name="Node2D" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_it4j3")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 960.0
+offset_bottom = 720.0
+scale = Vector2(0.667349, 0.50217)
+texture = ExtResource("1_4uhna")
+
+[node name="Cutscene" type="Sprite2D" parent="."]
+position = Vector2(319, 173)
+scale = Vector2(0.393815, 0.226661)
+texture = ExtResource("2_gd5mi")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 197.0
+offset_top = 22.0
+offset_right = 299.0
+offset_bottom = 45.0
+scale = Vector2(2.42922, 2.26101)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_nfrku")
+text = "Level 1 Complete!"
+
+[node name="SHOP" type="Button" parent="."]
+process_mode = 3
+texture_filter = 1
+offset_left = 194.0
+offset_top = 292.0
+offset_right = 226.0
+offset_bottom = 313.0
+scale = Vector2(2.98282, 2.85885)
+theme_override_fonts/font = ExtResource("3_nfrku")
+text = "SHOP"
+
+[node name="NEXTLEVEL" type="Button" parent="."]
+texture_filter = 1
+offset_left = 332.0
+offset_top = 293.0
+offset_right = 370.0
+offset_bottom = 327.0
+scale = Vector2(2.7177, 1.69746)
+theme_override_fonts/font = ExtResource("3_nfrku")
+text = "NEXT
+LEVEL"
+
+[connection signal="pressed" from="SHOP" to="." method="_on_shop_pressed"]

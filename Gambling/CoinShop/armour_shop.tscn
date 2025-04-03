@@ -1,35 +1,606 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1ick0kfhi2eg"]
+[gd_scene load_steps=25 format=3 uid="uid://d1ick0kfhi2eg"]
 
 [ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="1_2265n"]
+[ext_resource type="Texture2D" uid="uid://bbs2ox2iwi6bk" path="res://Gambling/CoinShop/space_background.png" id="1_f2j5o"]
+[ext_resource type="Script" path="res://Gambling/CoinShop/button.gd" id="3_m2kis"]
+[ext_resource type="Texture2D" uid="uid://bs3hpjexsvqt1" path="res://Textures/Items/Upgrades/coin2_20x20.png" id="4_px2pv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhlaj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4e0q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mekad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_327du"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csi4m"]
+
+[sub_resource type="Theme" id="Theme_17vjy"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_bhlaj")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_u4e0q")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_mekad")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_327du")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_csi4m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5oubd"]
+line_spacing = 0.5
+font_color = Color(0.160833, 1, 0.05, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qanhu"]
+line_spacing = 1.0
+font_color = Color(1, 0.04, 0.168, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndo46"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_807e4"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rckwq"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jusq2"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dolo"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dold"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(100, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pqf6"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(120, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s88d6"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(140, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scmg2"]
+atlas = ExtResource("4_px2pv")
+region = Rect2(160, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ri6qj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndo46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_807e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rckwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jusq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dolo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dold")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pqf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s88d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scmg2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6e3m2"]
+line_spacing = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_h4w8d"]
+line_spacing = 0.5
 
 [node name="ArmourShop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(327, 170)
+scale = Vector2(1.21038, 1.11417)
+texture = ExtResource("1_f2j5o")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
-[node name="ShopBackground" type="ScrollContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(16.0554, 10.1017)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ShopBackground"]
-layout_mode = 2
-
-[node name="ItemName" type="Label" parent="ShopBackground/VBoxContainer"]
+[node name="ShopLabel" type="Label" parent="UI"]
 texture_filter = 1
-layout_mode = 2
+offset_left = 2.0
+offset_top = -19.0
+offset_right = 56.0
+offset_bottom = 4.0
+scale = Vector2(3.4728, 2.81238)
 theme_override_fonts/font = ExtResource("1_2265n")
-text = "ArmourSet1
-"
+text = "Armor/HP"
 
-[node name="ItemDescription" type="Label" parent="ShopBackground/VBoxContainer"]
-texture_filter = 1
+[node name="ScrollContainer" type="ScrollContainer" parent="UI"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 5.0
+offset_top = 47.0
+offset_right = 45.0
+offset_bottom = 87.0
+scale = Vector2(15.7528, 7.73504)
+theme = SubResource("Theme_17vjy")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+color = Color(0.717647, 0.505882, 1, 1)
+
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.2325
+offset_top = 6.72266
+offset_right = 87.2325
+offset_bottom = 27.7227
+scale = Vector2(0.127141, 0.348096)
 theme_override_fonts/font = ExtResource("1_2265n")
-text = "Description for armourset1
-+20 HP
--10 Movement Speed
+text = "PURCHASE
 "
+script = ExtResource("3_m2kis")
+
+[node name="ItemName" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.263687, 0.347042)
+theme_override_colors/font_color = Color(0.1128, 0.167947, 0.94, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Iron Marshal's Rig"
+
+[node name="ItemDesc" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.190442
+offset_top = 5.42984
+offset_right = 174.19
+offset_bottom = 34.4298
+scale = Vector2(0.140634, 0.219977)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "A reinforced lawman's armor. "
+
+[node name="ColorRect" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_left = 0.571327
+offset_top = 10.8597
+offset_right = 40.5713
+offset_bottom = 50.8597
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_left = 7.42723
+offset_top = 11.2475
+offset_right = 47.4272
+offset_bottom = 51.2475
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_left = 15.1084
+offset_top = 10.8597
+offset_right = 55.1084
+offset_bottom = 50.8597
+scale = Vector2(0.25141, 0.193843)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ItemStats" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.15834
+offset_top = 11.7646
+offset_right = 42.1583
+offset_bottom = 38.7646
+scale = Vector2(0.138996, 0.219612)
+theme_override_colors/font_color = Color(0.08, 1, 0.570667, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = " HP 
++20%"
+label_settings = SubResource("LabelSettings_5oubd")
+
+[node name="ItemStats2" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.31596
+offset_top = 11.7646
+offset_right = 92.316
+offset_bottom = 37.7646
+scale = Vector2(0.124094, 0.230261)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Speed
+-10%"
+label_settings = SubResource("LabelSettings_qanhu")
+
+[node name="ItemPrice" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.3138
+offset_top = 12.2818
+offset_right = 60.3138
+offset_bottom = 35.2818
+scale = Vector2(0.157002, 0.32191)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "400"
+
+[node name="CoinLabel" type="AnimatedSprite2D" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+position = Vector2(17.6476, 14.4796)
+scale = Vector2(0.14379, 0.231909)
+sprite_frames = SubResource("SpriteFrames_ri6qj")
+autoplay = "default"
+frame_progress = 0.618192
+
+[node name="ColorRect2" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+color = Color(0.717647, 0.505882, 1, 1)
+
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.2325
+offset_top = 6.72266
+offset_right = 87.2325
+offset_bottom = 27.7227
+scale = Vector2(0.127141, 0.348096)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "PURCHASE
+"
+script = ExtResource("3_m2kis")
+
+[node name="ItemName" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.263687, 0.347042)
+theme_override_colors/font_color = Color(0.1128, 0.167947, 0.94, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Nova Trailblazer"
+
+[node name="ItemDesc" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.190442
+offset_top = 5.42984
+offset_right = 174.19
+offset_bottom = 34.4298
+scale = Vector2(0.140634, 0.219977)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Lighweight, pulse-charged suit that
+powers movement."
+label_settings = SubResource("LabelSettings_6e3m2")
+
+[node name="ColorRect" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+layout_mode = 0
+offset_left = 0.571327
+offset_top = 10.8597
+offset_right = 40.5713
+offset_bottom = 50.8597
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+layout_mode = 0
+offset_left = 7.42723
+offset_top = 11.2475
+offset_right = 47.4272
+offset_bottom = 51.2475
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+layout_mode = 0
+offset_left = 15.1084
+offset_top = 10.8597
+offset_right = 55.1084
+offset_bottom = 50.8597
+scale = Vector2(0.25141, 0.193843)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ItemStats" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.15834
+offset_top = 11.7646
+offset_right = 42.1583
+offset_bottom = 38.7646
+scale = Vector2(0.138996, 0.219612)
+theme_override_colors/font_color = Color(0.08, 1, 0.570667, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Speed
++45%"
+label_settings = SubResource("LabelSettings_5oubd")
+
+[node name="ItemStats2" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.31596
+offset_top = 11.7646
+offset_right = 92.316
+offset_bottom = 37.7646
+scale = Vector2(0.124094, 0.230261)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "HP
+-20%"
+label_settings = SubResource("LabelSettings_qanhu")
+
+[node name="ItemPrice" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.3138
+offset_top = 12.2818
+offset_right = 60.3138
+offset_bottom = 35.2818
+scale = Vector2(0.157002, 0.32191)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "300"
+
+[node name="CoinLabel" type="AnimatedSprite2D" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+position = Vector2(17.6476, 14.4796)
+scale = Vector2(0.14379, 0.231909)
+sprite_frames = SubResource("SpriteFrames_ri6qj")
+autoplay = "default"
+frame_progress = 0.0402791
+
+[node name="ColorRect3" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+color = Color(0.717647, 0.505882, 1, 1)
+
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.2325
+offset_top = 6.72266
+offset_right = 87.2325
+offset_bottom = 27.7227
+scale = Vector2(0.127141, 0.348096)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "PURCHASE
+"
+script = ExtResource("3_m2kis")
+
+[node name="ItemName" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.263687, 0.347042)
+theme_override_colors/font_color = Color(0.1128, 0.167947, 0.94, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Doomrider’s Onslaught"
+
+[node name="ItemDesc" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.190442
+offset_top = 5.42984
+offset_right = 174.19
+offset_bottom = 34.4298
+scale = Vector2(0.140634, 0.219977)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Spiked, intimidation-focused armor."
+
+[node name="ColorRect" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+layout_mode = 0
+offset_left = 0.571327
+offset_top = 10.8597
+offset_right = 40.5713
+offset_bottom = 50.8597
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+layout_mode = 0
+offset_left = 7.42723
+offset_top = 11.2475
+offset_right = 47.4272
+offset_bottom = 51.2475
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+layout_mode = 0
+offset_left = 15.1084
+offset_top = 10.8597
+offset_right = 55.1084
+offset_bottom = 50.8597
+scale = Vector2(0.25141, 0.193843)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ItemStats" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.71398
+offset_top = 11.8575
+offset_right = 41.714
+offset_bottom = 38.8575
+scale = Vector2(0.138996, 0.219612)
+theme_override_colors/font_color = Color(0.08, 1, 0.570667, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = " HP
++75%"
+label_settings = SubResource("LabelSettings_5oubd")
+
+[node name="ItemStats2" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.31596
+offset_top = 11.7646
+offset_right = 92.316
+offset_bottom = 37.7646
+scale = Vector2(0.124094, 0.230261)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Speed
+-25%"
+label_settings = SubResource("LabelSettings_qanhu")
+
+[node name="ItemPrice" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.3138
+offset_top = 12.2818
+offset_right = 60.3138
+offset_bottom = 35.2818
+scale = Vector2(0.157002, 0.32191)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "800"
+
+[node name="CoinLabel" type="AnimatedSprite2D" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+position = Vector2(17.6476, 14.4796)
+scale = Vector2(0.14379, 0.231909)
+sprite_frames = SubResource("SpriteFrames_ri6qj")
+autoplay = "default"
+frame_progress = 0.0402791
+
+[node name="ColorRect4" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+color = Color(0.717647, 0.505882, 1, 1)
+
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.2325
+offset_top = 6.72266
+offset_right = 87.2325
+offset_bottom = 27.7227
+scale = Vector2(0.127141, 0.348096)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "PURCHASE
+"
+script = ExtResource("3_m2kis")
+
+[node name="ItemName" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.263687, 0.347042)
+theme_override_colors/font_color = Color(0.1128, 0.167947, 0.94, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Sundown Armor"
+
+[node name="ItemDesc" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.190442
+offset_top = 5.42984
+offset_right = 174.19
+offset_bottom = 34.4298
+scale = Vector2(0.140634, 0.219977)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Rare outlaw gear, deflects 
+some bullets."
+label_settings = SubResource("LabelSettings_h4w8d")
+
+[node name="ColorRect" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+layout_mode = 0
+offset_left = 0.571327
+offset_top = 10.8597
+offset_right = 40.5713
+offset_bottom = 50.8597
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+layout_mode = 0
+offset_left = 7.42723
+offset_top = 11.2475
+offset_right = 47.4272
+offset_bottom = 51.2475
+scale = Vector2(0.145862, 0.195716)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+layout_mode = 0
+offset_left = 15.1084
+offset_top = 10.8597
+offset_right = 55.1084
+offset_bottom = 50.8597
+scale = Vector2(0.25141, 0.193843)
+color = Color(0.03, 0.03, 0.03, 0.392157)
+
+[node name="ItemStats" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.15834
+offset_top = 11.7646
+offset_right = 42.1583
+offset_bottom = 38.7646
+scale = Vector2(0.138996, 0.219612)
+theme_override_colors/font_color = Color(0.08, 1, 0.570667, 1)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = " HP 
++40%"
+label_settings = SubResource("LabelSettings_5oubd")
+
+[node name="ItemStats2" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.31596
+offset_top = 11.7646
+offset_right = 92.316
+offset_bottom = 37.7646
+scale = Vector2(0.124094, 0.230261)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "Speed
+-5%"
+label_settings = SubResource("LabelSettings_qanhu")
+
+[node name="ItemPrice" type="Label" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.3138
+offset_top = 12.2818
+offset_right = 60.3138
+offset_bottom = 35.2818
+scale = Vector2(0.157002, 0.32191)
+theme_override_fonts/font = ExtResource("1_2265n")
+text = "600"
+
+[node name="CoinLabel" type="AnimatedSprite2D" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+position = Vector2(17.6476, 14.4796)
+scale = Vector2(0.14379, 0.231909)
+sprite_frames = SubResource("SpriteFrames_ri6qj")
+autoplay = "default"
+frame_progress = 0.0402791
+
+[connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" method="_on_mouse_exited"]

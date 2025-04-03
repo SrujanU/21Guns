@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://75dynuvor8wq"]
+[gd_scene load_steps=8 format=3 uid="uid://75dynuvor8wq"]
 
 [ext_resource type="Script" path="res://Gambling/CoinShop/coin_shop.gd" id="1_86yh0"]
 [ext_resource type="Texture2D" uid="uid://b6kxd54d3dwas" path="res://Gambling/sprites/coin_shop_background.png" id="1_x0gti"]
@@ -6,11 +6,14 @@
 [ext_resource type="Script" path="res://Gambling/CoinShop/armour_hp.gd" id="3_0jnkd"]
 [ext_resource type="Script" path="res://Gambling/CoinShop/guns_ammo.gd" id="4_fjxs3"]
 [ext_resource type="Script" path="res://Gambling/CoinShop/upgrades.gd" id="5_8lhdl"]
+[ext_resource type="PackedScene" uid="uid://d1ick0kfhi2eg" path="res://Gambling/CoinShop/armour_shop.tscn" id="7_0x2nw"]
 
 [node name="CoinShop" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_86yh0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(321, 164)
@@ -28,15 +31,15 @@ color = Color(0.0156863, 0.0156863, 0.0196078, 0.890196)
 [node name="Shop" type="Label" parent="CanvasLayer/ShopMenuBackground"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 17.3962
+offset_left = 16.9364
 offset_top = -0.260138
-offset_right = 57.3962
+offset_right = 56.9364
 offset_bottom = 22.7399
 scale = Vector2(0.253417, 0.485534)
 theme_override_fonts/font = ExtResource("2_3ps0v")
 text = "SHOP"
 
-[node name="ArmourHP" type="Button" parent="CanvasLayer/ShopMenuBackground"]
+[node name="ArmourHP" type="Button" parent="CanvasLayer/ShopMenuBackground" groups=["shop_buttons"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 1.76261
@@ -45,10 +48,10 @@ offset_right = 63.7626
 offset_bottom = 29.8937
 scale = Vector2(0.156272, 0.168825)
 theme_override_fonts/font = ExtResource("2_3ps0v")
-text = "Armour/HP"
+text = "Armor/HP"
 script = ExtResource("3_0jnkd")
 
-[node name="GunsAmmo" type="Button" parent="CanvasLayer/ShopMenuBackground"]
+[node name="GunsAmmo" type="Button" parent="CanvasLayer/ShopMenuBackground" groups=["shop_buttons"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 15.7868
@@ -60,7 +63,7 @@ theme_override_fonts/font = ExtResource("2_3ps0v")
 text = "Guns/Ammo"
 script = ExtResource("4_fjxs3")
 
-[node name="Upgrades" type="Button" parent="CanvasLayer/ShopMenuBackground"]
+[node name="Upgrades" type="Button" parent="CanvasLayer/ShopMenuBackground" groups=["shop_buttons"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 28.5849
@@ -75,8 +78,13 @@ script = ExtResource("5_8lhdl")
 
 [node name="ShopItems" type="CanvasLayer" parent="."]
 
+[node name="ArmourShop" parent="ShopItems" instance=ExtResource("7_0x2nw")]
+position = Vector2(83, 127)
+scale = Vector2(0.710791, 0.530698)
+
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="." method="_on_armour_hp_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/GunsAmmo" to="CanvasLayer/ShopMenuBackground/GunsAmmo" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/GunsAmmo" to="CanvasLayer/ShopMenuBackground/GunsAmmo" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/Upgrades" to="CanvasLayer/ShopMenuBackground/Upgrades" method="_on_mouse_entered"]

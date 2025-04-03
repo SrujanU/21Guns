@@ -23,8 +23,8 @@ var tutorial_screen = 0
 var texture_paths = ["res://Gambling/sprites/level1_cutscene_0.png", 
 "res://Gambling/sprites/level1_cutscene_1.png", 
 "res://Gambling/sprites/level1_cutscene_2.png"]
-var tutorial_texts = ["Level Up! You've reached level 2.", 
-"Level ups give coin rewards.\nGamble your coins in Blackjack\nfor upgrades and more.", 
+var tutorial_texts = ["Level Up! You've reached level 2.\nYou win 200 coins!", 
+"Gamble these coins in Blackjack\nfor upgrades and more.", 
 "Or keep your coins for later."]
 func _on_visibility_changed() -> void:
 	

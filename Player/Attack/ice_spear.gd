@@ -35,7 +35,9 @@ func _ready():
 	tween.play()
 			
 func _physics_process(delta):
-	sprite_2d.play("shot")
+	#sprite_2d.play("shot")
+	if hit_wall == true:
+		return
 	position += angle*Global.bullet_speed*delta
 		
 func enemy_hit(charge = 1):
@@ -46,3 +48,11 @@ func enemy_hit(charge = 1):
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+var hit_wall:bool = false
+func _on_body_entered(body: Node2D) -> void:
+	if body is StaticBody2D:
+		sprite_2d.play("hit_wall")
+		hit_wall = true
+		await sprite_2d.animation_finished
+		queue_free()

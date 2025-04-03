@@ -30,3 +30,12 @@ res://Utility/enemy_spawner.gd
 res://Utility/enemy_spawner.tscn
 res://Player/bullet_speed.gd
 res://Player/speed.gd
+res://Player/Attack/ice_spear.gd
+res://World/score.gd
+res://Gambling/level_1_tutorial.gd
+res://Player/Attack/cooldown_bar.tscn
+res://Gambling/CoinShop/button.gd
+res://Textures/Items/Scenes/medkit.gd
+res://World/level1_end.tscn
+res://World/level_1_end.gd
+res://Gambling/Blackjack/blackjack_placeholder.tscn

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cc3ixicd6v14q"]
+[gd_scene load_steps=69 format=3 uid="uid://cc3ixicd6v14q"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_sgyn8"]
 [ext_resource type="Texture2D" uid="uid://db41pfeq6133c" path="res://Textures/Player/acestarlight_spritesheet1/CowBoyHolsterWeapon.png" id="2_b1c3u"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7m8q4wfrst3x" path="res://Textures/Player/acestarlight_spritesheet1/CowBoyWalking.png" id="3_maka2"]
 [ext_resource type="Script" path="res://Player/health.gd" id="4_01imx"]
 [ext_resource type="Texture2D" uid="uid://durgda0wv04a2" path="res://Textures/Player/acestarlight_spritesheet1/CowBoyShoot.png" id="4_hvxop"]
+[ext_resource type="Texture2D" uid="uid://c2yunrddogq1j" path="res://Textures/Player/acestarlight_spritesheet1/iron_marshals_rig.png" id="4_vjixy"]
 [ext_resource type="Script" path="res://Player/level.gd" id="5_jx0ub"]
 [ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="5_sivn6"]
 [ext_resource type="Script" path="res://Player/progress_bar.gd" id="6_qr1lw"]
@@ -18,9 +19,8 @@
 [ext_resource type="AudioStream" uid="uid://cmftibauf22wi" path="res://SoundEffect/player death.wav" id="14_xvlpn"]
 [ext_resource type="Script" path="res://Player/bullet_speed.gd" id="15_7rko8"]
 [ext_resource type="Script" path="res://Player/ammo_label.gd" id="16_evyy0"]
-[ext_resource type="Texture2D" uid="uid://sas2jl6hsymv" path="res://Textures/GUI/progress-bar-circle.png" id="18_fyqje"]
-[ext_resource type="Script" path="res://Player/gun_cooldown.gd" id="19_i03pc"]
-[ext_resource type="Texture2D" uid="uid://b7eu00wrsq2ch" path="res://Textures/GUI/progress-bar-frame.png" id="19_my25i"]
+[ext_resource type="Texture2D" uid="uid://dpx42pf71iu4s" path="res://Textures/Items/Weapons/ammo-pistol 32px.png" id="17_xnkmg"]
+[ext_resource type="PackedScene" uid="uid://b1w5oos5lt4qj" path="res://Player/Attack/cooldown_bar.tscn" id="20_h0fdu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mttxt"]
 atlas = ExtResource("2_b1c3u")
@@ -65,6 +65,34 @@ region = Rect2(336, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkn5t"]
 atlas = ExtResource("2_iu151")
 region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glr21"]
+atlas = ExtResource("4_vjixy")
+region = Rect2(22, 15, 45, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yemef"]
+atlas = ExtResource("4_vjixy")
+region = Rect2(69, 15, 45, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjt38"]
+atlas = ExtResource("4_vjixy")
+region = Rect2(116, 15, 45, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e55yo"]
+atlas = ExtResource("4_vjixy")
+region = Rect2(163, 15, 45, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kysiv"]
+atlas = ExtResource("4_vjixy")
+region = Rect2(210, 15, 45, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc8f1"]
+atlas = ExtResource("4_vjixy")
+region = Rect2(257, 15, 45, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gajyd"]
+atlas = ExtResource("4_vjixy")
+region = Rect2(304, 15, 45, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qpmg"]
 atlas = ExtResource("3_maka2")
@@ -165,6 +193,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_glr21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yemef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjt38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e55yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kysiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc8f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gajyd")
+}],
+"loop": true,
+"name": &"iron_m_rig_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_8qpmg")
 }, {
 "duration": 1.0,
@@ -259,9 +313,8 @@ death_audio_stream_player = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_86j37")
-animation = &"hit"
-autoplay = "move"
-frame_progress = 0.87554
+animation = &"iron_m_rig_idle"
+frame_progress = 0.724521
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -428,12 +481,16 @@ label_settings = SubResource("LabelSettings_xiom3")
 
 [node name="AmmoLabel" type="Label" parent="Camera2D"]
 texture_filter = 1
-offset_left = -153.0
-offset_top = 61.0
-offset_right = -113.0
-offset_bottom = 84.0
+offset_left = -122.5
+offset_top = 65.5
+offset_right = -82.5
+offset_bottom = 88.5
 theme_override_fonts/font = ExtResource("5_sivn6")
 script = ExtResource("16_evyy0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/AmmoLabel"]
+position = Vector2(-13, 6)
+texture = ExtResource("17_xnkmg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -478,19 +535,8 @@ position = Vector2(12, 2.5)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_xvlpn")
 
-[node name="CooldownBar" type="TextureProgressBar" parent="."]
-offset_left = 12.0
-offset_top = -19.0
-offset_right = 140.0
-offset_bottom = 109.0
-scale = Vector2(0.112761, 0.111747)
-fill_mode = 4
-texture_under = ExtResource("18_fyqje")
-texture_over = ExtResource("19_my25i")
-texture_progress = ExtResource("18_fyqje")
-tint_under = Color(0.00392157, 0.00392157, 0.00392157, 0.580392)
-tint_progress = Color(0.0509804, 1, 1, 1)
-script = ExtResource("19_i03pc")
+[node name="CooldownBar" parent="." instance=ExtResource("20_h0fdu")]
+z_index = 4096
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 [connection signal="timeout" from="Attack/IceSpearTimer" to="." method="_on_ice_spear_timer_timeout"]

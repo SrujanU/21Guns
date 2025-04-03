@@ -116,7 +116,7 @@ func win():
 	print(bet)
 	#add upgrade logic here and in lose and draw
 	#await get_tree().create_timer(3.0).timeout
-	# check if upgrade at stake is a coin multiplier
+	# check if upgrade at stake is a coin multiplier or ammo
 	if Global.upgrades[-1] == 3:
 		#Player won 2x the coins rewarded for leveling up
 		Global.coins += 2 * Global.last_coin_reward
@@ -124,9 +124,14 @@ func win():
 	elif Global.upgrades[-1] == 4:
 		#Player won 1.5x reward
 		Global.coins += 1.5 * Global.last_coin_reward
+	
 	else:
 		#Player won an upgrade that is not a coins multiplier, so they just keep the original reward and the upgrade added is kept
 		Global.coins += Global.last_coin_reward
+	
+	if Global.upgrades[-1] == 6:
+		get_tree().get_nodes_in_group("player")[0].icespear_ammo += 45
+		
 	
 	
 	

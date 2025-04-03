@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1w5oos5lt4qj"]
+
+[ext_resource type="Texture2D" uid="uid://sas2jl6hsymv" path="res://Textures/GUI/progress-bar-circle.png" id="1_j8bca"]
+[ext_resource type="Texture2D" uid="uid://b7eu00wrsq2ch" path="res://Textures/GUI/progress-bar-frame.png" id="2_nrb8s"]
+[ext_resource type="Script" path="res://Player/gun_cooldown.gd" id="3_5u76y"]
+
+[node name="CooldownBar" type="TextureProgressBar"]
+offset_left = 12.0
+offset_top = -19.0
+offset_right = 140.0
+offset_bottom = 109.0
+scale = Vector2(0.112761, 0.111747)
+fill_mode = 4
+texture_under = ExtResource("1_j8bca")
+texture_over = ExtResource("2_nrb8s")
+texture_progress = ExtResource("1_j8bca")
+tint_under = Color(0.00392157, 0.00392157, 0.00392157, 0.580392)
+tint_progress = Color(0.0509804, 1, 1, 1)
+script = ExtResource("3_5u76y")

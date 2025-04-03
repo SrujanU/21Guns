@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $Level1Tutorial/AudioStreamPlayer2D
 
 func _ready() -> void:
 	#$".".hide()
@@ -132,8 +133,11 @@ func _on_visibility_changed() -> void:
 	
 	#After menu construction, display the tutorial if first upgrade
 	if Global.player_level == 2:
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(1.80).timeout
+		
 		level_1_tutorial.show()
+		audio_stream_player_2d.play()
+		
 		
 		
 		
