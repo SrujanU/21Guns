@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1bxiwr71wypt"]
+
+[ext_resource type="PackedScene" uid="uid://d1ick0kfhi2eg" path="res://Gambling/CoinShop/armour_shop.tscn" id="1_73bht"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_evs81"]
+line_spacing = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_vi2np"]
+line_spacing = 0.5
+
+[node name="GunsAmmo" instance=ExtResource("1_73bht")]
+
+[node name="ShopLabel" parent="UI" index="0"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 277.0
+offset_top = -21.0
+offset_right = 331.0
+offset_bottom = 2.0
+grow_horizontal = 0
+text = "Guns"
+
+[node name="ScrollContainer" parent="UI" index="1"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 46.0
+offset_right = 40.0
+offset_bottom = 86.0
+
+[node name="ColorRect" parent="UI/ScrollContainer/VBoxContainer" index="0"]
+color = Color(0.996807, 0.387106, 0.57936, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="1"]
+text = "Stardust Spitter"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="2"]
+text = "Spews 10 of bullets at blistering 
+speeds before cooldown."
+label_settings = SubResource("LabelSettings_evs81")
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="6"]
+offset_left = 1.6505
+offset_top = 11.3768
+offset_right = 41.6505
+offset_bottom = 50.3768
+scale = Vector2(0.118376, 0.180172)
+text = "Bullet
+Speed
++20%"
+
+[node name="ItemStats2" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="7"]
+text = "Power
+-10%"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="8"]
+text = "800"
+
+[node name="ColorRect2" parent="UI/ScrollContainer/VBoxContainer" index="1"]
+color = Color(0.996078, 0.388235, 0.580392, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="1"]
+text = "Meteor Shower"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="2"]
+text = "One trigger pull launches a spray
+of bullets."
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="6"]
+text = "Power
++45%"
+
+[node name="ItemStats2" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="7"]
+offset_left = 7.49071
+offset_top = 11.0354
+offset_right = 91.4907
+offset_bottom = 38.0354
+scale = Vector2(0.102178, 0.21803)
+text = " Cooldown
+ -20%"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="8"]
+text = "900"
+
+[node name="ColorRect3" parent="UI/ScrollContainer/VBoxContainer" index="2"]
+color = Color(0.996078, 0.388235, 0.580392, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="1"]
+text = "Starlight Piercer"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="2"]
+text = "Concentrated beam cuts
+through enemies like paper"
+label_settings = SubResource("LabelSettings_vi2np")
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="6"]
+text = "Power
++75%"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="8"]
+text = "1000"
+
+[node name="ColorRect4" parent="UI/ScrollContainer/VBoxContainer" index="3"]
+color = Color(0.996078, 0.388235, 0.580392, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="1"]
+text = "Big Ammo Pack"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="2"]
+text = "+300 Bullets!"
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="6"]
+text = " Ammo
++300"
+
+[node name="ItemStats2" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="7"]
+text = "NONE"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="8"]
+text = "400"

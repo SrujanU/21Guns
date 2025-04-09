@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Enemy
 const BASE_Z = 2000
 @export var movement_speed = 225
 @export var hp = 10
@@ -11,7 +12,7 @@ const BASE_Z = 2000
 
 @onready var anim = $AnimationPlayer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-const ENEMY_EXP_GAIN = 500
+var ENEMY_EXP_GAIN = 500
 var dying:bool = false
 var coin_path = "res://Textures/Items/Scenes/coin_pickup.tscn"
 
@@ -81,7 +82,7 @@ func die():
 	var coin = coin_scene.instantiate()
 	coin.position = self.position
 	get_parent().get_parent().add_child(coin)
-	
+	#audio_stream_player.play()
 	sprite_2d.play("die ")
 	#if not audio_stream_player or not is_instance_valid(audio_stream_player):
 		#return
@@ -97,6 +98,7 @@ func die():
 	#queue_free()
 	#new way using key frames, less buggy
 	animation_player.play("die")
+	
 	
 	
 	

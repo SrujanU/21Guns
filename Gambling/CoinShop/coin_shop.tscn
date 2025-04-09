@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://75dynuvor8wq"]
+[gd_scene load_steps=14 format=3 uid="uid://75dynuvor8wq"]
 
 [ext_resource type="Script" path="res://Gambling/CoinShop/coin_shop.gd" id="1_86yh0"]
 [ext_resource type="Texture2D" uid="uid://b6kxd54d3dwas" path="res://Gambling/sprites/coin_shop_background.png" id="1_x0gti"]
@@ -7,6 +7,12 @@
 [ext_resource type="Script" path="res://Gambling/CoinShop/guns_ammo.gd" id="4_fjxs3"]
 [ext_resource type="Script" path="res://Gambling/CoinShop/upgrades.gd" id="5_8lhdl"]
 [ext_resource type="PackedScene" uid="uid://d1ick0kfhi2eg" path="res://Gambling/CoinShop/armour_shop.tscn" id="7_0x2nw"]
+[ext_resource type="AudioStream" uid="uid://cbwg8rdg37dcf" path="res://SoundEffect/shop_button_sound.mp3" id="7_pp27h"]
+[ext_resource type="Texture2D" uid="uid://dw81dsiio1ojm" path="res://Gambling/sprites/wallet.jpeg" id="7_tcug6"]
+[ext_resource type="Script" path="res://Gambling/CoinShop/balance.gd" id="8_421is"]
+[ext_resource type="PackedScene" uid="uid://b1bxiwr71wypt" path="res://Gambling/CoinShop/guns_ammo.tscn" id="8_dtobr"]
+[ext_resource type="AudioStream" uid="uid://ddfk34qbxmquh" path="res://Audio/SoundEffect/shop_sountrack.mp3" id="12_00v88"]
+[ext_resource type="PackedScene" uid="uid://cw6gkqog6vrhr" path="res://Gambling/CoinShop/upgrade_shop.tscn" id="13_54j5g"]
 
 [node name="CoinShop" type="Node2D"]
 process_mode = 3
@@ -76,16 +82,77 @@ text = "Upgrades
 "
 script = ExtResource("5_8lhdl")
 
+[node name="Button" type="Button" parent="CanvasLayer/ShopMenuBackground"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.8037
+offset_top = 0.910483
+offset_right = 99.8037
+offset_bottom = 21.9105
+scale = Vector2(0.0766891, 0.172156)
+theme_override_colors/font_disabled_color = Color(0.984314, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.980392, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.996078, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.996078, 0, 0, 1)
+theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.996078, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(0.99779, 0.99779, 0.99779, 1)
+theme_override_colors/icon_pressed_color = Color(0.99558, 0.99558, 0.99558, 1)
+theme_override_colors/icon_hover_color = Color(0.984546, 0.984547, 0.984546, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.993372, 0.993372, 0.993372, 1)
+theme_override_colors/icon_disabled_color = Color(0.99779, 0.99779, 0.99779, 1)
+theme_override_fonts/font = ExtResource("2_3ps0v")
+text = "LEVEL 2 ->"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/ShopMenuBackground"]
+stream = ExtResource("7_pp27h")
+bus = &"SFX"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(98, 49)
+scale = Vector2(0.180805, 0.176762)
+texture = ExtResource("7_tcug6")
+
+[node name="Balance" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 122.0
+offset_top = 37.0
+offset_right = 162.0
+offset_bottom = 60.0
+scale = Vector2(1.7449, 1.68933)
+theme_override_colors/font_color = Color(0.901961, 0.796078, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ps0v")
+script = ExtResource("8_421is")
+
 [node name="ShopItems" type="CanvasLayer" parent="."]
 
 [node name="ArmourShop" parent="ShopItems" instance=ExtResource("7_0x2nw")]
 position = Vector2(83, 127)
 scale = Vector2(0.710791, 0.530698)
 
+[node name="GunLayer" type="CanvasLayer" parent="."]
+
+[node name="GunsAmmo" parent="GunLayer" instance=ExtResource("8_dtobr")]
+position = Vector2(83, 127)
+scale = Vector2(0.711, 0.531)
+
+[node name="soundtrack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_00v88")
+
+[node name="UpgradeLayer" type="CanvasLayer" parent="."]
+
+[node name="UpgradeShop" parent="UpgradeLayer" instance=ExtResource("13_54j5g")]
+position = Vector2(83, 127)
+scale = Vector2(0.711, 0.531)
+
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="." method="_on_armour_hp_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/GunsAmmo" to="CanvasLayer/ShopMenuBackground/GunsAmmo" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/GunsAmmo" to="CanvasLayer/ShopMenuBackground/GunsAmmo" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/ShopMenuBackground/GunsAmmo" to="." method="_on_guns_ammo_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/Upgrades" to="CanvasLayer/ShopMenuBackground/Upgrades" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/Upgrades" to="CanvasLayer/ShopMenuBackground/Upgrades" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/ShopMenuBackground/Upgrades" to="." method="_on_upgrades_pressed"]

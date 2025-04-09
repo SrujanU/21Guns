@@ -27,6 +27,7 @@ var level_path = "res://Gambling/Blackjack/blackjack.tscn"
 func _process(delta: float) -> void:
 	
 	if Global.player_exp >= Global.exp_thresholds[Global.player_level]:
+		#await get_tree().create_timer(1.5).timeout
 		print("level up")
 		Global.player_exp -= Global.exp_thresholds[Global.player_level]
 		Global.player_level += 1
@@ -40,7 +41,8 @@ func _process(delta: float) -> void:
 			#previous_level = Global.player_level  # Update stored level
 			#_on_visibility_changed()  # Call function when level changes
 		$".".show()
-		
+		for coin in get_tree().get_nodes_in_group("coins"):
+			coin.queue_free()
 		get_parent()
 		get_tree().paused = true
 		

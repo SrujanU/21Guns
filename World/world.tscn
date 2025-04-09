@@ -23,7 +23,7 @@ size = Vector2(240, 192)
 size = Vector2(480, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsy8b"]
-size = Vector2(144, 144)
+size = Vector2(136.541, 144)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n4u5r")
@@ -87,7 +87,7 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("8_83348")
 
 [node name="Medkit" parent="." instance=ExtResource("10_h2bh6")]
-position = Vector2(-186, -85)
+position = Vector2(-184, 8)
 
 [node name="Medkit4" parent="." instance=ExtResource("10_h2bh6")]
 position = Vector2(1352, -184)
@@ -108,7 +108,7 @@ position = Vector2(800, 1064)
 position = Vector2(-1280, 96)
 
 [node name="Medkit3" parent="." instance=ExtResource("10_h2bh6")]
-position = Vector2(416, -504)
+position = Vector2(-112, -728)
 
 [node name="Coin_pickup" parent="." instance=ExtResource("11_dk84w")]
 position = Vector2(75, -145)
@@ -117,23 +117,10 @@ position = Vector2(75, -145)
 position = Vector2(-112, -164)
 
 [node name="Coin_pickup3" parent="." instance=ExtResource("11_dk84w")]
-position = Vector2(295, -47)
+position = Vector2(304, 0)
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(2408, -1728)
-
-[node name="Obstacle 6" type="StaticBody2D" parent="."]
-position = Vector2(1248, -112)
-collision_layer = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle 6"]
-position = Vector2(-432, -112)
-scale = Vector2(0.236535, 0.239092)
-texture = ExtResource("13_ms4xo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 6"]
-position = Vector2(-432, -104)
-shape = SubResource("RectangleShape2D_egfkh")
 
 [node name="Obstacle 3" type="StaticBody2D" parent="."]
 position = Vector2(1248, -248)
@@ -145,6 +132,20 @@ scale = Vector2(0.236535, 0.239092)
 texture = ExtResource("13_ms4xo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 3"]
+position = Vector2(-432, -104)
+shape = SubResource("RectangleShape2D_egfkh")
+
+[node name="Obstacle 7" type="StaticBody2D" parent="."]
+position = Vector2(1168, -336)
+rotation = -0.599689
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle 7"]
+position = Vector2(-432, -112)
+scale = Vector2(0.236535, 0.239092)
+texture = ExtResource("13_ms4xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 7"]
 position = Vector2(-432, -104)
 shape = SubResource("RectangleShape2D_egfkh")
 
@@ -175,19 +176,6 @@ texture = ExtResource("13_ms4xo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 5"]
 position = Vector2(-432, -104)
 shape = SubResource("RectangleShape2D_egfkh")
-
-[node name="Obstacle2" type="StaticBody2D" parent="."]
-position = Vector2(8, 120)
-collision_layer = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle2"]
-position = Vector2(32, -344)
-scale = Vector2(0.485227, 0.381733)
-texture = ExtResource("14_s2yt5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
-position = Vector2(32, -348)
-shape = SubResource("RectangleShape2D_gc45m")
 
 [node name="Obstacle25" type="StaticBody2D" parent="."]
 position = Vector2(1688, 408)
@@ -438,7 +426,7 @@ position = Vector2(32, -348)
 shape = SubResource("RectangleShape2D_gc45m")
 
 [node name="Obstacle8" type="StaticBody2D" parent="."]
-position = Vector2(440, 120)
+position = Vector2(440, 216)
 collision_layer = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle8"]
@@ -451,7 +439,7 @@ position = Vector2(32, -348)
 shape = SubResource("RectangleShape2D_gc45m")
 
 [node name="Obstacle4" type="StaticBody2D" parent="."]
-position = Vector2(-464, 120)
+position = Vector2(-464, 216)
 collision_layer = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle4"]
@@ -554,6 +542,94 @@ texture = ExtResource("14_s2yt5")
 position = Vector2(32, -348)
 shape = SubResource("RectangleShape2D_gc45m")
 
+[node name="Obstacle37" type="StaticBody2D" parent="."]
+position = Vector2(176, 216)
+rotation = 0.0018816
+scale = Vector2(1, 1)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle37"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle37"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
+[node name="Obstacle56" type="StaticBody2D" parent="."]
+position = Vector2(-144, -520)
+rotation = -0.0119526
+scale = Vector2(1, 1)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle56"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle56"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
+[node name="Obstacle55" type="StaticBody2D" parent="."]
+position = Vector2(56, -696)
+rotation = -7.84795
+scale = Vector2(1, 1)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle55"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle55"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
+[node name="Obstacle38" type="StaticBody2D" parent="."]
+position = Vector2(-288, -768)
+rotation = -4.70915
+scale = Vector2(1, 1)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle38"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle38"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
+[node name="Obstacle35" type="StaticBody2D" parent="."]
+position = Vector2(-288, -328)
+rotation = -4.70822
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle35"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle35"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
+[node name="Obstacle34" type="StaticBody2D" parent="."]
+position = Vector2(55.9999, -424)
+rotation = -1.57045
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle34"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle34"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
 [node name="Obstacle23" type="StaticBody2D" parent="."]
 position = Vector2(1776, 328)
 rotation = 1.57076
@@ -609,6 +685,36 @@ texture = ExtResource("14_s2yt5")
 position = Vector2(32, -348)
 shape = SubResource("RectangleShape2D_gc45m")
 
+[node name="Obstacle51" type="StaticBody2D" parent="."]
+position = Vector2(1296, 328)
+rotation = -0.560564
+scale = Vector2(0.962226, 0.46925)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle51"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle51"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
+[node name="Obstacle52" type="StaticBody2D" parent="."]
+position = Vector2(1376, 280)
+rotation = -0.577663
+scale = Vector2(0.962226, 0.46925)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle52"]
+position = Vector2(32, -344)
+scale = Vector2(0.485227, 0.381733)
+texture = ExtResource("14_s2yt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle52"]
+position = Vector2(32, -348)
+shape = SubResource("RectangleShape2D_gc45m")
+
 [node name="Obstacle40" type="StaticBody2D" parent="."]
 position = Vector2(800, 520)
 scale = Vector2(0.980931, 0.685018)
@@ -649,29 +755,31 @@ texture = ExtResource("15_3blt4")
 position = Vector2(432, -104)
 shape = SubResource("RectangleShape2D_bsy8b")
 
-[node name="Obstacle37" type="StaticBody2D" parent="."]
-position = Vector2(800, 312)
+[node name="Obstacle54" type="StaticBody2D" parent="."]
+position = Vector2(1112, 144)
+scale = Vector2(1.00147, 1.03211)
 collision_layer = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle37"]
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle54"]
 position = Vector2(432, -104)
-scale = Vector2(0.122971, 0.176184)
+scale = Vector2(0.138439, 0.200392)
 texture = ExtResource("15_3blt4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle37"]
-position = Vector2(432, -104)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle54"]
+position = Vector2(435.73, -104)
 shape = SubResource("RectangleShape2D_bsy8b")
 
-[node name="Obstacle38" type="StaticBody2D" parent="."]
-position = Vector2(904, 240)
+[node name="Obstacle53" type="StaticBody2D" parent="."]
+position = Vector2(640, 392)
+scale = Vector2(1.00074, 1.01593)
 collision_layer = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle38"]
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle53"]
 position = Vector2(432, -104)
-scale = Vector2(0.122971, 0.176184)
+scale = Vector2(0.138439, 0.200392)
 texture = ExtResource("15_3blt4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle38"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle53"]
 position = Vector2(432, -104)
 shape = SubResource("RectangleShape2D_bsy8b")
 
@@ -685,19 +793,6 @@ scale = Vector2(0.122971, 0.176184)
 texture = ExtResource("15_3blt4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle39"]
-position = Vector2(432, -104)
-shape = SubResource("RectangleShape2D_bsy8b")
-
-[node name="Obstacle35" type="StaticBody2D" parent="."]
-position = Vector2(688, 376)
-collision_layer = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle35"]
-position = Vector2(432, -104)
-scale = Vector2(0.122971, 0.176184)
-texture = ExtResource("15_3blt4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle35"]
 position = Vector2(432, -104)
 shape = SubResource("RectangleShape2D_bsy8b")
 
@@ -753,6 +848,19 @@ texture = ExtResource("15_3blt4")
 position = Vector2(432, -104)
 shape = SubResource("RectangleShape2D_bsy8b")
 
+[node name="Obstacle 6" type="StaticBody2D" parent="."]
+position = Vector2(1248, -112)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle 6"]
+position = Vector2(-432, -112)
+scale = Vector2(0.236535, 0.239092)
+texture = ExtResource("13_ms4xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 6"]
+position = Vector2(-432, -104)
+shape = SubResource("RectangleShape2D_egfkh")
+
 [node name="Obstacle17" type="StaticBody2D" parent="."]
 position = Vector2(-2784, 0)
 collision_layer = 5
@@ -766,19 +874,11 @@ texture = ExtResource("15_3blt4")
 position = Vector2(432, -104)
 shape = SubResource("RectangleShape2D_bsy8b")
 
-[node name="Obstacle9" type="StaticBody2D" parent="."]
-position = Vector2(1000, 136)
-collision_layer = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle9"]
-position = Vector2(432, -104)
-scale = Vector2(0.122971, 0.176184)
-texture = ExtResource("15_3blt4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle9"]
-position = Vector2(432, -104)
-shape = SubResource("RectangleShape2D_bsy8b")
-
 [node name="Node2D2" parent="." instance=ExtResource("15_vivvx")]
+visible = false
+
+[node name="cyclops_spawn_timer" type="Timer" parent="."]
+wait_time = 10.406
+one_shot = true
 
 [connection signal="close_requested" from="Tutorial" to="Tutorial" method="_on_close_requested"]

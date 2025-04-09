@@ -1,29 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4d2mby60hpvt"]
+[gd_scene load_steps=6 format=3 uid="uid://c4d2mby60hpvt"]
 
 [ext_resource type="Texture2D" uid="uid://v4iw3g16nrjc" path="res://Gambling/CoinShop/pixel_art_background (1).png" id="1_4uhna"]
 [ext_resource type="Script" path="res://World/level_1_end.gd" id="1_it4j3"]
 [ext_resource type="Texture2D" uid="uid://chq1mcqj5dr62" path="res://Gambling/CoinShop/level1_end_cutscene.png" id="2_gd5mi"]
+[ext_resource type="AudioStream" uid="uid://fpq07jy0wh2i" path="res://Audio/SoundEffect/stinger.mp3" id="2_r0ymt"]
 [ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="3_nfrku"]
 
 [node name="Node2D" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_it4j3")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="EndScreen" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EndScreen"]
+stream = ExtResource("2_r0ymt")
+
+[node name="Background" type="TextureRect" parent="EndScreen"]
 texture_filter = 1
+layout_mode = 0
 offset_right = 960.0
 offset_bottom = 720.0
 scale = Vector2(0.667349, 0.50217)
 texture = ExtResource("1_4uhna")
 
-[node name="Cutscene" type="Sprite2D" parent="."]
+[node name="Cutscene" type="Sprite2D" parent="EndScreen"]
 position = Vector2(319, 173)
 scale = Vector2(0.393815, 0.226661)
 texture = ExtResource("2_gd5mi")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="EndScreen"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 197.0
 offset_top = 22.0
 offset_right = 299.0
@@ -33,9 +45,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_nfrku")
 text = "Level 1 Complete!"
 
-[node name="SHOP" type="Button" parent="."]
-process_mode = 3
+[node name="SHOP" type="Button" parent="EndScreen"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 194.0
 offset_top = 292.0
 offset_right = 226.0
@@ -44,8 +56,9 @@ scale = Vector2(2.98282, 2.85885)
 theme_override_fonts/font = ExtResource("3_nfrku")
 text = "SHOP"
 
-[node name="NEXTLEVEL" type="Button" parent="."]
+[node name="NEXTLEVEL" type="Button" parent="EndScreen"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 332.0
 offset_top = 293.0
 offset_right = 370.0
@@ -55,4 +68,9 @@ theme_override_fonts/font = ExtResource("3_nfrku")
 text = "NEXT
 LEVEL"
 
-[connection signal="pressed" from="SHOP" to="." method="_on_shop_pressed"]
+[node name="end_level_timer" type="Timer" parent="."]
+wait_time = 5.005
+one_shot = true
+
+[connection signal="pressed" from="EndScreen/SHOP" to="." method="_on_shop_pressed"]
+[connection signal="timeout" from="end_level_timer" to="." method="_on_end_level_timer_timeout"]

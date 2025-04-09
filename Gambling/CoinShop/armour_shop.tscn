@@ -23,7 +23,6 @@ VScrollBar/styles/scroll = SubResource("StyleBoxFlat_327du")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_csi4m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_5oubd"]
-line_spacing = 0.5
 font_color = Color(0.160833, 1, 0.05, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qanhu"]
@@ -121,6 +120,7 @@ anchors_preset = 0
 
 [node name="ShopLabel" type="Label" parent="UI"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 2.0
 offset_top = -19.0
 offset_right = 56.0
@@ -131,6 +131,7 @@ text = "Armor/HP"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI"]
 custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
 offset_left = 5.0
 offset_top = 47.0
 offset_right = 45.0
@@ -254,7 +255,7 @@ position = Vector2(17.6476, 14.4796)
 scale = Vector2(0.14379, 0.231909)
 sprite_frames = SubResource("SpriteFrames_ri6qj")
 autoplay = "default"
-frame_progress = 0.618192
+frame_progress = 0.306075
 
 [node name="ColorRect2" type="ColorRect" parent="UI/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(40, 20)

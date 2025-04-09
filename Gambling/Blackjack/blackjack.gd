@@ -48,14 +48,58 @@ func create_deck():
 	
 	
 	print(cards)
-	cards.shuffle()
+	if Global.is_first_play:
+		rig_deck_for_win()
+		Global.is_first_play = false
+	else:
+		
+		cards.shuffle()
 	for _card in cards:
 		_card.position.x = x
 		_card.position.y = y
 		y += 2.0
 		call_deferred("add_child", _card)
 		
+func rig_deck_for_win():
+	# First, shuffle the cards to randomize them
+	cards.shuffle()
 	
+	# Find some good cards for player (values that add up to 20 or 21)
+	var player_cards = []
+	var dealer_cards = []
+	
+	# Find a 10-value card and a face card for player (total 20)
+	for i in range(cards.size()):
+		if cards[i].value == 10 and player_cards.size() < 1:
+			player_cards.append(cards[i])
+		elif cards[i].value == 10 and player_cards.size() < 2:
+			player_cards.append(cards[i])
+			break
+	
+	# Find cards for dealer that won't beat 20 (like a 9 and a 6 = 15)
+	for i in range(cards.size()):
+		if cards[i] not in player_cards:
+			if cards[i].value < 10 and dealer_cards.size() < 1:
+				dealer_cards.append(cards[i])
+			elif cards[i].value < 10 and dealer_cards.size() < 2:
+				dealer_cards.append(cards[i])
+				break
+	
+	# Rearrange the deck to place these cards at the right positions from the end
+	# The last 4 cards drawn will be in this order: player, player, dealer, dealer
+	
+	# Remove the selected cards from the deck
+	for c in player_cards + dealer_cards:
+		cards.erase(c)
+	
+	# Add them back at the end in the right order so they'll be drawn correctly
+	# Since we draw from the end, dealer's second card should be last
+	cards.append(dealer_cards[1])  # Dealer's face-down card
+	cards.append(dealer_cards[0])  # Dealer's first card
+	cards.append(player_cards[1])  # Player's second card
+	cards.append(player_cards[0])  # Player's first card
+	
+	print("Deck rigged for first-time win!")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	

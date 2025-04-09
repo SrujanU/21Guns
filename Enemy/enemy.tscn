@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c53xho6nle46x" path="res://Textures/Enemy/MantisMove.png" id="3_acq0a"]
 [ext_resource type="PackedScene" uid="uid://bhfblyadw3s6q" path="res://Utility/hurt_box.tscn" id="3_k3m6r"]
 [ext_resource type="PackedScene" uid="uid://fhho6ecnkp82" path="res://Utility/hit_box.tscn" id="4_txfin"]
-[ext_resource type="AudioStream" uid="uid://0ayqf1jj3nau" path="res://Audio/SoundEffect/enemy_death.ogg" id="6_1io0j"]
+[ext_resource type="AudioStream" uid="uid://cf6shmwr7l2uq" path="res://SoundEffect/8-bit-fireball-81148.mp3" id="6_2ythk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_db8sc"]
 atlas = ExtResource("2_kigvt")
@@ -603,7 +603,7 @@ tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.133333),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -647,23 +647,6 @@ tracks/4/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_0p2dl"]
-resource_name = "walk"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 0]
-}
-
 [sub_resource type="Animation" id="Animation_51esi"]
 resource_name = "hit"
 length = 0.05
@@ -690,6 +673,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_0p2dl"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6rfvh"]
@@ -746,7 +746,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_7bk1v")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_1io0j")
+stream = ExtResource("6_2ythk")
 volume_db = 24.0
 bus = &"SFX"
 

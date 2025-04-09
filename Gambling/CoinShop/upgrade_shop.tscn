@@ -1,0 +1,133 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw6gkqog6vrhr"]
+
+[ext_resource type="PackedScene" uid="uid://d1ick0kfhi2eg" path="res://Gambling/CoinShop/armour_shop.tscn" id="1_gmgih"]
+[ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="2_3mryc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1v45k"]
+line_spacing = 0.25
+font = ExtResource("2_3mryc")
+font_color = Color(0.160784, 1, 0.0509804, 1)
+
+[node name="UpgradeShop" instance=ExtResource("1_gmgih")]
+position = Vector2(0, 23)
+
+[node name="ShopLabel" parent="UI" index="0"]
+offset_left = 460.0
+offset_right = 514.0
+text = "Upgrades"
+
+[node name="ColorRect" parent="UI/ScrollContainer/VBoxContainer" index="0"]
+color = Color(0.12238, 0.893515, 0.147132, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="1"]
+offset_left = 0.698289
+offset_top = 0.646409
+offset_right = 84.6983
+offset_bottom = 23.6464
+scale = Vector2(0.309262, 0.518632)
+theme_override_colors/font_color = Color(0.805464, 0.150312, 0.92187, 1)
+text = "ATTACK POWER +"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="2"]
+visible = false
+text = ""
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="6"]
+text = "Power
++10"
+
+[node name="ItemStats2" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="7"]
+text = "NONE"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="8"]
+text = "600"
+
+[node name="ColorRect2" parent="UI/ScrollContainer/VBoxContainer" index="1"]
+color = Color(0.121569, 0.894118, 0.14902, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="1"]
+offset_left = 1.3331
+offset_top = -0.212146
+offset_right = 61.3331
+offset_bottom = 22.7879
+scale = Vector2(0.361667, 0.605463)
+theme_override_colors/font_color = Color(0.803922, 0.14902, 0.921569, 1)
+text = "COOLDOWN -"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="2"]
+visible = false
+text = ""
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="6"]
+offset_left = 1.58702
+offset_top = 12.0696
+offset_right = 49.587
+offset_bottom = 39.0696
+scale = Vector2(0.0917111, 0.219612)
+text = "Cooldown
+ -33%"
+
+[node name="ItemStats2" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="7"]
+text = "NONE"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" index="8"]
+text = "500"
+
+[node name="ColorRect3" parent="UI/ScrollContainer/VBoxContainer" index="2"]
+color = Color(0.121569, 0.894118, 0.14902, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="1"]
+offset_left = 0.82525
+offset_top = 0.868525
+offset_right = 96.8252
+offset_bottom = 23.8685
+scale = Vector2(0.288277, 0.472947)
+theme_override_colors/font_color = Color(0.803922, 0.14902, 0.921569, 1)
+text = "MOVEMENT SPEED +"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="2"]
+visible = false
+text = ""
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="6"]
+scale = Vector2(0.132594, 0.202273)
+text = "Speed
++50"
+
+[node name="ItemStats2" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="7"]
+text = "NONE"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" index="8"]
+text = "400"
+
+[node name="ColorRect4" parent="UI/ScrollContainer/VBoxContainer" index="3"]
+color = Color(0.121569, 0.894118, 0.14902, 1)
+
+[node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="1"]
+offset_left = 0.888731
+offset_top = 0.914939
+offset_right = 102.889
+offset_bottom = 23.9149
+scale = Vector2(0.277512, 0.503215)
+theme_override_colors/font_color = Color(0.803922, 0.14902, 0.921569, 1)
+text = "BULLET VELOCITY +"
+
+[node name="ItemDesc" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="2"]
+visible = false
+
+[node name="ItemStats" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="6"]
+offset_left = 1.58702
+offset_top = 11.7746
+offset_right = 41.587
+offset_bottom = 50.7746
+scale = Vector2(0.105086, 0.163791)
+text = "Bullet
+Speed
++100"
+label_settings = SubResource("LabelSettings_1v45k")
+
+[node name="ItemStats2" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="7"]
+text = "NONE"
+
+[node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="8"]
+text = "300"

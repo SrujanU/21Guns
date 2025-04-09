@@ -89,5 +89,7 @@ text = "OK"
 stream = ExtResource("7_64uiw")
 bus = &"SFX"
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Level1Tutorial"]
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Level1Tutorial" to="Level1Tutorial" method="_on_visibility_changed"]
