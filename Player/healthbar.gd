@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 	
 
 func set_health_bar():
+	if Global.armor_set == 1:
+		tint_progress = Color("#00E5FF")
+		
 	$".".max_value = Global.max_health
 	$".".value = Global.health
 	

@@ -56,8 +56,13 @@ func get_random_position():
 	var y_spawn = randf_range(spawn_pos1.y, spawn_pos2.y)'''
 	#Old method of picking random position does not work with current level environment bc enemies can spawn outside or inside the static bodies (walls)
 	#New Way - picks random of several fixed spawn points (blue portals on the map)
-	var enemy_spawn_points = [Vector2(-1648, 144), Vector2(1960, -12)]
-	var random_spawn_index = randi() % len(enemy_spawn_points)
-	return enemy_spawn_points[random_spawn_index]
+	if Global.level == 1:
+		var enemy_spawn_points = [Vector2(-1648, 144), Vector2(1960, -12)]
+		var random_spawn_index = randi() % len(enemy_spawn_points)
+		return enemy_spawn_points[random_spawn_index]
+	elif Global.level == 2:
+		var enemy_spawn_points = [Vector2(16, 944), Vector2(-1600, 112), Vector2(-12, -1184), Vector2(1832, 80)]
+		var random_spawn_index = randi() % len(enemy_spawn_points)
+		return enemy_spawn_points[random_spawn_index]
 	#return Vector2(x_spawn,y_spawn)
 	

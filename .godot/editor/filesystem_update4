@@ -31,3 +31,16 @@ res://Player/canvas_layer.gd
 res://Gambling/CoinShop/balance.gd
 res://Gambling/CoinShop/coin_shop.gd
 res://Gambling/CoinShop/upgrade_shop.tscn
+res://laser_beam.gd
+res://Player/Attack/laser_beam.tscn
+res://Utility/hurt_box.gd
+res://World/world_2.tscn
+res://Gambling/CoinShop/armour_shop.gd
+res://World/tutorial.gd
+res://Gambling/CoinShop/button.gd
+res://Gambling/CoinShop/guns_ammo.gd
+res://Gambling/CoinShop/gunshop.gd
+res://Player/healthbar.gd
+res://Utility/enemy_spawner.gd
+res://enemy_3.gd
+res://Enemy/enemy_3.tscn

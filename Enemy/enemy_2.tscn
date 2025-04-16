@@ -547,10 +547,17 @@ script = ExtResource("2_wx8vb")
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_1gmoj")
-animation = &"move"
 
 [node name="HitBox" parent="." index="4"]
 damage = 10
+
+[node name="LaserTimer" type="Timer" parent="." index="6"]
+wait_time = 3.0
+
+[node name="Marker2D" type="Marker2D" parent="." index="7"]
+position = Vector2(-4, -21)
+
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 
 [editable path="HurtBox"]
 [editable path="HitBox"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://d1ick0kfhi2eg"]
+[gd_scene load_steps=27 format=3 uid="uid://d1ick0kfhi2eg"]
 
 [ext_resource type="FontFile" uid="uid://cmnhtwi5gsqii" path="res://Font/monogram-extended.ttf" id="1_2265n"]
 [ext_resource type="Texture2D" uid="uid://bbs2ox2iwi6bk" path="res://Gambling/CoinShop/space_background.png" id="1_f2j5o"]
+[ext_resource type="Script" path="res://Gambling/CoinShop/armour_shop.gd" id="1_n3i07"]
 [ext_resource type="Script" path="res://Gambling/CoinShop/button.gd" id="3_m2kis"]
 [ext_resource type="Texture2D" uid="uid://bs3hpjexsvqt1" path="res://Textures/Items/Upgrades/coin2_20x20.png" id="4_px2pv"]
+[ext_resource type="AudioStream" uid="uid://cukqslwcd3jge" path="res://Audio/SoundEffect/coin-upaif-14631.mp3" id="6_3aouf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhlaj"]
 
@@ -107,6 +109,8 @@ line_spacing = 0.5
 line_spacing = 0.5
 
 [node name="ArmourShop" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_n3i07")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -151,7 +155,7 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 color = Color(0.717647, 0.505882, 1, 1)
 
-[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect" groups=["buy_buttons"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 31.2325
@@ -248,7 +252,7 @@ offset_right = 60.3138
 offset_bottom = 35.2818
 scale = Vector2(0.157002, 0.32191)
 theme_override_fonts/font = ExtResource("1_2265n")
-text = "400"
+text = "200"
 
 [node name="CoinLabel" type="AnimatedSprite2D" parent="UI/ScrollContainer/VBoxContainer/ColorRect"]
 position = Vector2(17.6476, 14.4796)
@@ -263,7 +267,7 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 color = Color(0.717647, 0.505882, 1, 1)
 
-[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect2"]
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect2" groups=["buy_buttons"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 31.2325
@@ -377,7 +381,7 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 color = Color(0.717647, 0.505882, 1, 1)
 
-[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect3"]
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect3" groups=["buy_buttons"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 31.2325
@@ -489,7 +493,7 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 color = Color(0.717647, 0.505882, 1, 1)
 
-[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect4"]
+[node name="Button" type="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" groups=["buy_buttons"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 31.2325
@@ -597,11 +601,18 @@ sprite_frames = SubResource("SpriteFrames_ri6qj")
 autoplay = "default"
 frame_progress = 0.0402791
 
+[node name="BuySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3aouf")
+
 [connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect/Button" to="." method="_on_iron_rig_button_pressed"]
 [connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" to="." method="_on_nova_button_pressed"]
 [connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" to="." method="_on_doomrider_button_pressed"]
 [connection signal="mouse_entered" from="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" to="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" to="." method="_on_sundown_button_pressed"]

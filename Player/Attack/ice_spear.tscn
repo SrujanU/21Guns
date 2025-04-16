@@ -110,8 +110,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_k7f15")
 animation = &"hit_wall"
 autoplay = "shot"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.211031, 3.18705)

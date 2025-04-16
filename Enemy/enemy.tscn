@@ -515,9 +515,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqxse"]
-radius = 8.0
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdxy3"]
+size = Vector2(41.0156, 44.6691)
 
 [sub_resource type="Animation" id="Animation_an80x"]
 tracks/0/type = "value"
@@ -701,10 +700,9 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d625a"]
-size = Vector2(20, 26)
+size = Vector2(28.4636, 67.2293)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bk1v"]
-size = Vector2(25, 30)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooahi"]
 
 [node name="enemy_kolbold_weak" type="CharacterBody2D" node_paths=PackedStringArray("audio_stream_player") groups=["mobs"]]
 collision_layer = 5
@@ -716,12 +714,13 @@ audio_stream_player = NodePath("AudioStreamPlayer2D")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4ks7i")
-animation = &"hit"
+animation = &"move"
 autoplay = "move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
-shape = SubResource("CapsuleShape2D_lqxse")
+scale = Vector2(1.28, 1.36)
+shape = SubResource("RectangleShape2D_gdxy3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -734,16 +733,17 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
-position = Vector2(2, 3)
+position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_d625a")
 
 [node name="HitBox" parent="." instance=ExtResource("4_txfin")]
 collision_layer = 2
 collision_mask = 2
+damage = 5
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_7bk1v")
+position = Vector2(1, 4)
+shape = SubResource("CapsuleShape2D_ooahi")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2ythk")

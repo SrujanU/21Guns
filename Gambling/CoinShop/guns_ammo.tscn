@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1bxiwr71wypt"]
+[gd_scene load_steps=5 format=3 uid="uid://b1bxiwr71wypt"]
 
 [ext_resource type="PackedScene" uid="uid://d1ick0kfhi2eg" path="res://Gambling/CoinShop/armour_shop.tscn" id="1_73bht"]
+[ext_resource type="Script" path="res://Gambling/CoinShop/gunshop.gd" id="2_bve16"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_evs81"]
 line_spacing = 0.5
@@ -9,6 +10,7 @@ line_spacing = 0.5
 line_spacing = 0.5
 
 [node name="GunsAmmo" instance=ExtResource("1_73bht")]
+script = ExtResource("2_bve16")
 
 [node name="ShopLabel" parent="UI" index="0"]
 layout_mode = 1
@@ -23,7 +25,6 @@ grow_horizontal = 0
 text = "Guns"
 
 [node name="ScrollContainer" parent="UI" index="1"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 46.0
 offset_right = 40.0
@@ -31,6 +32,9 @@ offset_bottom = 86.0
 
 [node name="ColorRect" parent="UI/ScrollContainer/VBoxContainer" index="0"]
 color = Color(0.996807, 0.387106, 0.57936, 1)
+
+[node name="Button" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="0"]
+process_mode = 3
 
 [node name="ItemName" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="1"]
 text = "Stardust Spitter"
@@ -55,7 +59,7 @@ text = "Power
 -10%"
 
 [node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect" index="8"]
-text = "800"
+text = "300"
 
 [node name="ColorRect2" parent="UI/ScrollContainer/VBoxContainer" index="1"]
 color = Color(0.996078, 0.388235, 0.580392, 1)
@@ -119,3 +123,8 @@ text = "NONE"
 
 [node name="ItemPrice" parent="UI/ScrollContainer/VBoxContainer/ColorRect4" index="8"]
 text = "400"
+
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect/Button" to="." method="_on_spitter_button_pressed"]
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect2/Button" to="." method="_on_meteor_button_pressed"]
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect3/Button" to="." method="_on_piercer_button_pressed"]
+[connection signal="pressed" from="UI/ScrollContainer/VBoxContainer/ColorRect4/Button" to="." method="_on_ammo_button_pressed"]

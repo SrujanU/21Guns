@@ -1,11 +1,8 @@
 extends Button
 
-
 var bet_value
-var original_size := Vector2(0.143, 0.182)
-var grow_size = Vector2(0.163, 0.202)
-
-
+var original_size := Vector2(0.149, 0.181)
+var grow_size = Vector2(0.169, 0.201)
 func _on_mouse_entered() -> void:
 	grow_btn(grow_size, .1)
 

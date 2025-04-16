@@ -1,9 +1,13 @@
 extends "res://Enemy/enemy.gd"
 
-
+@onready var marker_2d: Marker2D = $Marker2D
+@onready var laser_timer: Timer = $LaserTimer
+var laser_path = "res://Player/Attack/laser_beam.tscn"
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 func _ready():
+	super()
+	laser_timer.start()
 	movement_speed = 120
 	hp = 20
 	ENEMY_EXP_GAIN = 750
@@ -30,4 +34,15 @@ func _ready():
 	#move_and_slide()
 	#if hp == 0:
 		#Global.cyclops_dead = true
+	
 	#pass
+
+
+func _on_laser_timer_timeout() -> void:
+	var laser_scene = load(laser_path)
+	var laser_beam = laser_scene.instantiate()
+	laser_beam.position = marker_2d.global_position
+	laser_beam.target = get_tree().get_first_node_in_group("player").global_position
+	add_child(laser_beam)
+	print("laser!")
+	

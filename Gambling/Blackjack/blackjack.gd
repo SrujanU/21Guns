@@ -1,6 +1,5 @@
 extends Node2D
 
-
 class_name Blackjack
 var bet
 
@@ -21,6 +20,13 @@ var current_card_broker_x := 120
 #var current_card_broker_y = 70
 var cards_broker := []
 
+#@onready var animation_player: AnimationPlayer = $Window/AnimationPlayer
+@onready var result: Label = $Window/Result
+@onready var upgrade_won: Label = $Window/UpgradeWon
+@onready var final_score: Label = $Window/FinalScore
+
+
+#animation_player.get_animation("Default").loop_mode = LOOP_LINEAR
 func create_deck():
 	var x:= 1.0
 	var y := 1.0
@@ -144,19 +150,36 @@ func check_count():
 	#checks if player busts
 	if Global.count > 21:
 		lose()
+		
+
+@onready var upgrade_sound: AudioStreamPlayer2D = $UpgradeSound
+@onready var animation_player: AnimationPlayer = $Window/AnimationPlayer
+
 
 func win():
+	
 	$Music.stop()
 	flip_end_game()
 	$Hit.visible = false
 	$Stand.visible = false
 	var result = $Window.get_child(1)
-	$Window/ColorRect.set_color(Color("#33b349"))
+	$Window/ColorRect.set_color(Color("#7503a5"))
 	btn()
 	$Window.visible = true
+	
 	backtogame.pressed.connect(_on_backtogame_pressed)
-	result.text = "   YOU WIN!\n" + str(Global.selected_upgrade) + "\n" + print_result() 
+	result.text = "YOU WIN!" 
+	final_score.text = print_result()
+	result.add_theme_color_override("font_color", Color("#00f700"))
 	$SoundWin.play()
+	animation_player.get_animation("Default").set_loop_mode(Animation.LOOP_LINEAR)
+	animation_player.play("Default")
+	await get_tree().create_timer(2.0).timeout
+	upgrade_won.add_theme_color_override("font_color", Color("#00f700"))
+	upgrade_sound.play()
+	upgrade_won.text = str(Global.selected_upgrade) 
+
+	
 	print(bet)
 	#add upgrade logic here and in lose and draw
 	#await get_tree().create_timer(3.0).timeout
@@ -187,12 +210,19 @@ func lose():
 	$Hit.visible = false
 	$Stand.visible = false
 	var result = $Window.get_child(1)
-	$Window/ColorRect.set_color(Color("#cc3333"))
+	$Window/ColorRect.set_color(Color("#000000"))
 	btn()
 	$Window.visible = true
 	backtogame.pressed.connect(_on_backtogame_pressed)
-	result.text = "   YOU LOSE!\n" + print_result() + "\nNo upgrade:("
+	#result.text = "   YOU LOSE!\n" + print_result() + "\nNo upgrade:("
+	result.text = "YOU LOSE!" 
+	final_score.text = print_result()
+	result.add_theme_color_override("font_color", Color("#fc0300"))
+	upgrade_won.text = "NO UPGRADE :("
 	Global.upgrades.pop_back()
+	#animation_player.play("Default")
+	animation_player.get_animation("Default").set_loop_mode(Animation.LOOP_LINEAR)
+	animation_player.play("Default")
 	$SoundLose.play()
 	
 	
@@ -207,11 +237,19 @@ func draw():
 	var result = $Window.get_child(1)
 	btn()
 	print(bet)
+	$Window/ColorRect.set_color(Color("#000000"))
+	result.text = "DRAW."
 	$Window.visible = true
 	backtogame.pressed.connect(_on_backtogame_pressed)
-	result.text = "   DRAW\n" + print_result() + "\nNo upgrade:("
+	#result.text = "   DRAW\n" + print_result() + "\nNo upgrade:("
+	 
+	final_score.text = print_result()
+	result.add_theme_color_override("font_color", Color("#ffffff"))
+	upgrade_won.text = "NO UPGRADE :("
 	#In a draw, the player gets to keep their coins, but gains no upgrade
 	Global.coins += Global.last_coin_reward
+	
+	#animation_player.play("Default")
 	Global.upgrades.pop_back()
 	
 	

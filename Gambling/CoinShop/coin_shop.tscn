@@ -133,9 +133,10 @@ position = Vector2(83, 127)
 scale = Vector2(0.710791, 0.530698)
 
 [node name="GunLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="GunsAmmo" parent="GunLayer" instance=ExtResource("8_dtobr")]
-position = Vector2(83, 127)
+position = Vector2(85, 126)
 scale = Vector2(0.711, 0.531)
 
 [node name="soundtrack" type="AudioStreamPlayer2D" parent="."]
@@ -144,8 +145,10 @@ stream = ExtResource("12_00v88")
 [node name="UpgradeLayer" type="CanvasLayer" parent="."]
 
 [node name="UpgradeShop" parent="UpgradeLayer" instance=ExtResource("13_54j5g")]
+process_mode = 0
 position = Vector2(83, 127)
 scale = Vector2(0.711, 0.531)
+script = null
 
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/ArmourHP" to="CanvasLayer/ShopMenuBackground/ArmourHP" method="_on_mouse_exited"]
@@ -156,3 +159,4 @@ scale = Vector2(0.711, 0.531)
 [connection signal="mouse_entered" from="CanvasLayer/ShopMenuBackground/Upgrades" to="CanvasLayer/ShopMenuBackground/Upgrades" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ShopMenuBackground/Upgrades" to="CanvasLayer/ShopMenuBackground/Upgrades" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/ShopMenuBackground/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="CanvasLayer/ShopMenuBackground/Button" to="." method="_on_level2_button_pressed"]

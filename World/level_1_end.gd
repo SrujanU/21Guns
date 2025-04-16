@@ -21,7 +21,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if Global.score >= 35 and not menu_visible:
+	if Global.score >= 15 and not menu_visible:
+		#if Global.level == 2:
+			#get_tree().quit()
 		if not end_timer_started:
 			end_level_timer.start()
 			end_timer_started = true
@@ -71,8 +73,13 @@ func _on_shop_pressed() -> void:
 	#show blackjack scene
 	shop_scene.visible = true
 	shop_scene.top_level = true
-	print("Shop scene added and set to visible: ", shop_scene.visible)
-	print("distance:" + str(background.position.distance_to(shop_scene.global_position)))
+	#free world 1 scene and add world 2
+	
+	get_parent().queue_free()
+	#print("world scene freed.")
+	
+	
+	
 	
 
 
@@ -81,4 +88,15 @@ func _on_end_level_timer_timeout() -> void:
 	audio_stream_player_2d.play()
 	get_tree().paused = true
 	menu_visible = true 
+	
+
+
+func _on_nextlevel_pressed() -> void:
+	var world_2_path = "res://World/world_2.tscn"
+	var world_2_scene = load(world_2_path)
+	var world_2 = world_2_scene.instantiate()
+	get_parent().get_parent().add_child(world_2)
+	get_tree().paused = false
+	Global.next_level()
+	get_parent().queue_free()
 	

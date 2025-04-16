@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 const BASE_Z = 2000
-@export var movement_speed = 225
+@export var movement_speed = 200
 @export var hp = 10
 @onready var player = get_tree().get_first_node_in_group("player")
 

@@ -28,7 +28,7 @@ func update_exp_bar():
 		tween.kill()
 	var tween = get_tree().create_tween()
 	if Global.player_exp >= Global.exp_thresholds[Global.player_level]:
-		tween.tween_property(self, "fill_mode", 0, 0.5)
+		tween.tween_property(self, "fill_mode", 0, 0.25)
 		await tween.finished
 		
 		value = 0
